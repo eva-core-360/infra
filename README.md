@@ -60,12 +60,15 @@ infra/
         ├── 14_DOMAIN_PACK_MEMORY.md
         ├── 15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md
         ├── 16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md
-        └── 17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md
+        ├── 17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md
+        └── 18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md
 ```
 
 ## Evidência experimental preservada
 
 `16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md` registra achados de uma bateria anterior com 508 cenários sobre mecanismos locais de um protótipo. O documento é tratado como **evidência histórica**, não como arquitetura-alvo: reaproveitamos método, métricas e falhas observadas sem transportar automaticamente limitações do protótipo para o novo Core.
+
+`18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md` registra a análise arquitetural de um acervo privado anterior com 32 fichas neuro/cognitivas. O conteúdo original não é reproduzido: a leitura propõe estudar essas fichas como **Lentes Cognitivas componíveis**, não como 32 primitivas rígidas do Core.
 
 ## Foco vigente
 
@@ -97,6 +100,8 @@ As próximas frentes centrais são:
 - Cognitive Kernel e invariantes universais;
 - Evidence Model e separação entre score, evidência, inferência e confiança;
 - Evaluation Plane e baselines;
+- Cognitive Lens Registry / Lens Stacks e orquestração seletiva;
+- arquitetura de agentes/guards determinísticos, heurísticos e opcionais por modelo;
 - aprendizado contínuo supervisionado em múltiplos níveis;
 - Capability Registry e Schema Registry;
 - event log, lineage, rastreabilidade e versionamento cognitivo;
