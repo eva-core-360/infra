@@ -14,7 +14,8 @@ Antes de propor arquitetura, código ou decisões estruturais, qualquer pessoa o
 6. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
 7. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
 8. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
-9. `AGENTS.md`
+9. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
+10. `AGENTS.md`
 
 Depois, consultar os documentos específicos da área em que irá trabalhar.
 
@@ -22,21 +23,17 @@ Depois, consultar os documentos específicos da área em que irá trabalhar.
 
 > Produtos dependem do Eva Engine®. O Eva Engine® não depende de nenhum produto consumidor.
 
-O Eva Memory® e protótipos anteriores são laboratórios e consumidores do motor; **não definem o teto conceitual do Core**.
+Protótipos anteriores são laboratórios e evidência; **não definem o teto conceitual do Core**.
 
-## Princípio de escala
+## Princípios de escala e evidência
 
 > **Nascer pequeno na implementação não significa nascer pequeno na arquitetura.**
 
-O Eva Engine® deve crescer por composição: novos idiomas, schemas, Domain Packs, capabilities, providers, relações e mecanismos de aprendizagem devem ampliar o sistema sem exigir reconstrução do núcleo.
-
-Aprendizado contínuo é desejado, porém sua promoção deve ser supervisionada, versionada, mensurável e reversível.
-
-## Princípio de evidência
-
 > **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
 
-O projeto distingue ideia, prova de mecanismo, bateria reproduzível, escala sintética, piloto de domínio, prova operacional e prova econômica. A arquitetura pode nascer com ambição empresarial alta; cada capacidade precisa conquistar os degraus de evidência.
+O Eva Engine® deve crescer por composição: schemas, registries, Domain Packs, capabilities, providers, lentes, agentes, relações e mecanismos de aprendizagem devem ampliar o sistema sem exigir reconstrução do núcleo.
+
+O projeto distingue ideia, prova de mecanismo, bateria reproduzível, escala sintética, piloto de domínio, prova operacional e prova econômica.
 
 ## Blueprint atual
 
@@ -66,30 +63,29 @@ infra/
         ├── 17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md
         ├── 18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md
         ├── 19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md
-        └── 20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md
+        ├── 20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md
+        └── 21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md
 ```
 
-## Evidência experimental preservada
+## Evidência e conceitos preservados
 
-`16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md` registra achados de uma bateria anterior com 508 cenários sobre mecanismos locais de um protótipo. O documento é tratado como **evidência histórica**, não como arquitetura-alvo: reaproveitamos método, métricas e falhas observadas sem transportar automaticamente limitações do protótipo para o novo Core.
-
-`18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md` registra a análise arquitetural de um acervo privado anterior com 32 fichas neuro/cognitivas. O conteúdo original não é reproduzido: a leitura propõe estudar essas fichas como **Lentes Cognitivas componíveis**, não como 32 primitivas rígidas do Core.
-
-`19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md` formaliza o significado arquitetural do **360**: Core no centro, órbita extensível de lentes, agentes, guards, challengers, evaluators e policies, com ativação seletiva, orçamento e critérios de parada. Também registra a pista histórica de uma hierarquia 32 → 12 → 8 sem inventar o mapeamento ausente no recorte disponível.
-
-`20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md` formaliza a **Explosão Atômica como ciclo recursivo em ondas**: cada processamento pode gerar resultado externo, derivados cognitivos e candidatos de aprendizagem; derivados podem se fragmentar e reentrar no motor, sempre com lineage, orçamento, novidade, ganho de informação e condição de parada. Também estabelece a direção de resolver o máximo possível com mecânica, estatística e especialistas locais antes de escalar para IA supervisora.
+- `16_...` registra achados de uma bateria anterior com 508 cenários como **evidência histórica**, não como arquitetura-alvo.
+- `18_...` propõe as fichas cognitivas privadas como **Lentes Cognitivas componíveis**.
+- `19_...` formaliza o **360** como Core central cercado por órbita extensível de lentes, agentes, guards, challengers, evaluators e policies.
+- `20_...` formaliza a **Explosão Atômica Recursiva em ondas** e o escalonamento progressivo de mecânica para IA supervisora.
+- `21_...` cria o **Learning Quarantine Plane**: candidatos de aprendizagem e derivados experimentais ficam fora do Trusted Core; só atravessam por Promotion Gate após avaliação, versionamento e possibilidade de recuperação/rollback.
 
 ## Foco vigente
 
-O foco atual é o **Eva Engine® como infraestrutura cognitiva generalista e potencial motor empresarial**, não a experiência de um bloco de notas.
+O foco atual é o **Eva Engine® como infraestrutura cognitiva generalista e potencial motor empresarial**, não a experiência de um produto específico.
 
-O projeto deve separar três tipos de escala:
+A engenharia deve distinguir:
 
 - escala operacional;
 - escala cognitiva;
 - escala de domínio.
 
-E deve investigar a engenharia em camadas:
+Fluxo conceitual em evolução:
 
 ```text
 substrato determinístico
@@ -98,40 +94,39 @@ substrato determinístico
 → contexto
 → recuperação
 → lentes
-→ agentes especialistas
+→ especialistas
 → cruzamento
-→ relações/inferência
-→ challenger/contraprova
+→ inferência
+→ challenger
 → avaliação
 → policy
 → resultado
 → derivados cognitivos
 → nova onda
-→ aprendizado
-→ orquestração
-→ governança
+→ candidatos de aprendizagem
+→ Learning Quarantine
+→ Promotion Gate
+→ nova versão promovida do Trusted Core
 ```
 
-As próximas frentes centrais são:
+Próximas frentes centrais:
 
 - Cognitive Kernel e invariantes universais;
-- Evidence Model e separação entre score, evidência, inferência e confiança;
+- Evidence Model;
 - Evaluation Plane e baselines;
-- Cognitive Lens Registry / Lens Stacks e orquestração seletiva;
-- arquitetura de agentes/guards determinísticos, heurísticos e opcionais por modelo;
-- Challenger/Critic e mecanismos de contraprova;
-- formalização de `Cognitive Derivative`, `Learning Candidate` e `Wave`;
-- métricas de novidade, ganho de informação e valor marginal entre ondas;
+- Cognitive Lens Registry / Lens Stacks;
+- agentes/guards determinísticos, heurísticos e opcionais por modelo;
+- Challenger/Critic;
+- `Cognitive Derivative`, `Learning Candidate` e `Wave`;
+- métricas de novidade, ganho de informação e valor marginal;
 - Supervisory AI Plane e critérios de escalonamento;
-- aprendizado contínuo supervisionado em múltiplos níveis;
+- Learning Quarantine, Promotion Gate, Shadow Mode e Recovery Protocol;
 - Capability Registry e Schema Registry;
-- event log, lineage, rastreabilidade e versionamento cognitivo;
-- dataset de referência e laboratório de testes;
-- primeira implementação executável no Cursor sem estreitar a arquitetura;
-- experimentos de escala sintética antes de qualquer alegação empresarial.
+- lineage, blast radius, rastreabilidade e versionamento cognitivo;
+- datasets, red team, testes de escala e pilotos de domínio.
 
 ## Fase privada de P&D
 
-Na fase atual, documentação, datasets, intenção experimental e resultados permanecem privados no repositório autorizado salvo decisão explícita de divulgação. Protótipos de produto não precisam ser expostos para que o Core seja especificado.
+Na fase atual, documentação, datasets, intenção experimental e resultados permanecem privados no repositório autorizado salvo decisão explícita de divulgação.
 
-O Blueprint é vivo: decisões podem evoluir, mas mudanças estruturais devem ser registradas e versionadas.
+O Blueprint é vivo: decisões podem evoluir, mas mudanças estruturais devem ser registradas, avaliadas e versionadas.
