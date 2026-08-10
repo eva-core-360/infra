@@ -204,6 +204,62 @@ Este arquivo não substitui o Blueprint Mestre. Ele funciona como índice rápid
 
 ---
 
+## D-029 — Nascer pequeno na implementação, não na arquitetura
+
+**Status:** aprovada  
+**Decisão:** a primeira versão executável pode ser pequena, mas o modelo arquitetural deve nascer preparado para múltiplos produtos, domínios e capacidades futuras.
+
+---
+
+## D-030 — Crescimento exponencial por composição
+
+**Status:** aprovada  
+**Decisão:** “crescimento exponencial” significa multiplicar capacidades por composição de módulos, schemas, registries, Domain Packs, idiomas, memória e aprendizagem; não significa crescimento descontrolado de custo ou complexidade.
+
+---
+
+## D-031 — Aprendizado contínuo supervisionado e governado
+
+**Status:** aprovada  
+**Decisão:** o motor pode aprender continuamente a partir de uso, feedback e evidência, mas a promoção de mudanças duradouras deve ser versionada, mensurável, rastreável e reversível.
+
+---
+
+## D-032 — Quatro níveis de aprendizagem
+
+**Status:** aprovada como estrutura de referência  
+**Decisão:** distinguir aprendizado de sessão/contexto, aprendizado individual, aprendizado de domínio e aprendizado global, com exigências crescentes de avaliação e supervisão.
+
+---
+
+## D-033 — Capability Registry
+
+**Status:** aprovada como capacidade necessária  
+**Decisão:** o motor deve poder declarar quais capacidades possui, suas versões e disponibilidade, permitindo que produtos descubram capacidades sem presumir comportamento silenciosamente.
+
+---
+
+## D-034 — Evaluators são parte da arquitetura
+
+**Status:** aprovada  
+**Decisão:** melhoria cognitiva deve ser demonstrada por avaliação comparável a baseline; evaluators não são apenas ferramentas de desenvolvimento, mas parte do ciclo de evolução do motor.
+
+---
+
+## D-035 — Hierarquia interna extensível
+
+**Status:** aprovada  
+**Decisão:** o Core não deve impor profundidade fixa como “área → subárea → nota”. Deve suportar hierarquias extensíveis, relações transversais, múltipla pertença quando permitida, aliases e expansão por schema.
+
+---
+
+## D-036 — O motor não se auto-modifica sem governança
+
+**Status:** aprovada  
+**Decisão:** aprendizado contínuo não autoriza alteração silenciosa do código-fonte, ontologia global ou políticas críticas. Alterações globais passam por pipeline de avaliação, promoção, versionamento e rollback.
+
+---
+
 # Decisões ainda não fechadas
 
 - ontologia v0 final;
@@ -215,4 +271,7 @@ Este arquivo não substitui o Blueprint Mestre. Ele funciona como índice rápid
 - fila/background job implementation;
 - isolamento multi-tenant;
 - idiomas da primeira versão executável além de pt-BR;
-- limites numéricos iniciais da expansão cognitiva.
+- limites numéricos iniciais da expansão cognitiva;
+- critérios objetivos de promoção entre níveis de aprendizagem;
+- formato inicial do Capability Registry;
+- baseline e métricas dos primeiros evaluators.
