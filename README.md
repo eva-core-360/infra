@@ -1,6 +1,6 @@
 # Eva Engine® — Infra & Blueprint
 
-Este repositório é a fonte de verdade arquitetural do **Eva Engine®**, núcleo cognitivo generalista que dará origem ao **Eva Memory®** e, futuramente, poderá servir como motor para outros produtos digitais.
+Este repositório é a fonte de verdade arquitetural do **Eva Engine®**, núcleo cognitivo generalista que dará origem a produtos próprios e poderá futuramente servir como infraestrutura e serviço para organizações de grande escala.
 
 ## Regra de continuidade
 
@@ -10,7 +10,8 @@ Antes de propor arquitetura, código ou decisões estruturais, qualquer pessoa o
 2. `docs/blueprint/01_REGISTRO_DECISOES.md`
 3. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
 4. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
-5. `AGENTS.md`
+5. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
+6. `AGENTS.md`
 
 Depois, consultar os documentos específicos da área em que irá trabalhar.
 
@@ -18,7 +19,7 @@ Depois, consultar os documentos específicos da área em que irá trabalhar.
 
 > Produtos dependem do Eva Engine®. O Eva Engine® não depende de nenhum produto consumidor.
 
-O Eva Memory® será o primeiro produto consumidor e laboratório real do motor, mas o Core deve nascer generalista.
+O Eva Memory® e protótipos anteriores são laboratórios e consumidores do motor; **não definem o teto conceitual do Core**.
 
 ## Princípio de escala
 
@@ -27,6 +28,12 @@ O Eva Memory® será o primeiro produto consumidor e laboratório real do motor,
 O Eva Engine® deve crescer por composição: novos idiomas, schemas, Domain Packs, capabilities, providers, relações e mecanismos de aprendizagem devem ampliar o sistema sem exigir reconstrução do núcleo.
 
 Aprendizado contínuo é desejado, porém sua promoção deve ser supervisionada, versionada, mensurável e reversível.
+
+## Princípio de evidência
+
+> **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
+
+O projeto distingue ideia, prova de mecanismo, bateria reproduzível, escala sintética, piloto de domínio, prova operacional e prova econômica. A arquitetura pode nascer com ambição empresarial alta; cada capacidade precisa conquistar os degraus de evidência.
 
 ## Blueprint atual
 
@@ -52,27 +59,53 @@ infra/
         ├── 13_MODELO_DE_DADOS_V0.md
         ├── 14_DOMAIN_PACK_MEMORY.md
         ├── 15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md
-        └── 16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md
+        ├── 16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md
+        └── 17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md
 ```
 
 ## Evidência experimental preservada
 
-`16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md` registra achados de uma bateria anterior com 508 cenários sobre mecanismos locais do produto de anotações. O documento é tratado como **evidência histórica**, não como arquitetura-alvo: reaproveitamos método, métricas e falhas observadas sem transportar automaticamente limitações do protótipo para o novo Core.
+`16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md` registra achados de uma bateria anterior com 508 cenários sobre mecanismos locais de um protótipo. O documento é tratado como **evidência histórica**, não como arquitetura-alvo: reaproveitamos método, métricas e falhas observadas sem transportar automaticamente limitações do protótipo para o novo Core.
 
-## Situação atual
+## Foco vigente
 
-A fundação conceitual e a direção de escala já estão registradas. O foco vigente é aprofundar o **Eva Engine® como infraestrutura cognitiva generalista**, antes de voltar a discutir experiência de usuário ou particularidades do produto de notas.
+O foco atual é o **Eva Engine® como infraestrutura cognitiva generalista e potencial motor empresarial**, não a experiência de um bloco de notas.
+
+O projeto deve separar três tipos de escala:
+
+- escala operacional;
+- escala cognitiva;
+- escala de domínio.
+
+E deve investigar a engenharia em camadas:
+
+```text
+substrato determinístico
+→ sinais
+→ representação
+→ contexto
+→ recuperação
+→ relações/inferência
+→ aprendizado
+→ avaliação
+→ orquestração
+→ governança
+```
 
 As próximas frentes centrais são:
 
 - Cognitive Kernel e invariantes universais;
-- ontologia universal extensível;
-- hierarquia interna sem profundidade rígida;
+- Evidence Model e separação entre score, evidência, inferência e confiança;
+- Evaluation Plane e baselines;
 - aprendizado contínuo supervisionado em múltiplos níveis;
-- evaluators e promotion pipeline;
 - Capability Registry e Schema Registry;
-- event log, rastreabilidade e versionamento cognitivo;
+- event log, lineage, rastreabilidade e versionamento cognitivo;
 - dataset de referência e laboratório de testes;
-- primeira implementação executável no Cursor sem estreitar a arquitetura.
+- primeira implementação executável no Cursor sem estreitar a arquitetura;
+- experimentos de escala sintética antes de qualquer alegação empresarial.
+
+## Fase privada de P&D
+
+Na fase atual, documentação, datasets, intenção experimental e resultados permanecem privados no repositório autorizado salvo decisão explícita de divulgação. Protótipos de produto não precisam ser expostos para que o Core seja especificado.
 
 O Blueprint é vivo: decisões podem evoluir, mas mudanças estruturais devem ser registradas e versionadas.
