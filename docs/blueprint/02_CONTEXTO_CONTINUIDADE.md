@@ -1,40 +1,50 @@
 # Eva Engine® — Contexto de Continuidade
 
-**Função deste documento:** permitir que um novo chat, agente ou desenvolvedor retome o projeto sem reconstruir a conversa original.
+**Função deste documento:** permitir que um novo chat, agente ou desenvolvedor retome o projeto sem reconstruir a conversa original e sem reduzir o Eva Engine® ao primeiro produto que inspirou seus mecanismos.
 
 ---
 
 # 1. Estado atual do projeto
 
-O projeto está na fase de **Blueprint arquitetural detalhado**, antes da implementação principal.
+O projeto está na fase de **Blueprint arquitetural detalhado**, antes da implementação principal do novo Core.
 
-A intenção é construir uma especificação suficientemente clara para que Cursor/agentes possam programar por módulos com testes, sem inventar a arquitetura durante a implementação.
+A intenção é construir uma especificação suficientemente clara para que Cursor/agentes possam programar por módulos com testes, sem inventar arquitetura durante a implementação.
 
 O repositório `eva-core-360/infra` é a fonte persistente de verdade do Blueprint.
 
+**Foco vigente:** Eva Engine® como infraestrutura cognitiva generalista, extensível, mensurável, supervisionada e potencialmente utilizável em produtos e operações empresariais de grande escala.
+
 ---
 
-# 2. Origem conceitual
+# 2. Origem conceitual — importante, mas não limitante
 
-A discussão começou a partir da mecânica de anotações do Eva Memory®.
+A discussão começou a partir de mecanismos de um produto de anotações e memória pessoal.
 
-Ideia inicial:
+Foram exploradas ideias como:
 
-- a pessoa como centro (“EU”);
-- áreas da vida ao redor;
-- áreas com mais atividade/continuidade se aproximam;
-- áreas deixadas de lado se afastam;
-- essa dinâmica foi chamada de gravidade/proximidade cognitiva.
+- pessoa no centro (“EU”);
+- áreas da vida;
+- continuidade;
+- retomada;
+- associação;
+- gravidade/proximidade cognitiva;
+- funcionamento principalmente determinístico e heurístico sem IA generativa ativa permanente.
 
-Durante o refinamento, percebeu-se que um grafo visual poderia ser difícil de construir, cansativo e ruim no mobile.
+Esses mecanismos serviram como primeiro laboratório para testar se regras pequenas, combinadas, poderiam produzir comportamento útil e percebido como inteligente.
 
-A decisão foi separar:
+**A origem em notas não define o novo Core.**
 
-> **mecânica interna ≠ interface visual**
+O protótipo de notas deve ser tratado como:
 
-A gravidade pode continuar sendo calculada nos bastidores sem qualquer grafo obrigatório.
+```text
+LABORATORIO
++
+EVIDENCIA HISTORICA
++
+FONTE DE CASOS DE TESTE
+```
 
-Direção visual atual para mobile: Home Cognitiva / Ranking Vivo.
+não como arquitetura-alvo universal.
 
 ---
 
@@ -42,103 +52,260 @@ Direção visual atual para mobile: Home Cognitiva / Ranking Vivo.
 
 A arquitetura deixou de ser pensada como “motor de notas”.
 
-O objetivo passou a ser construir um motor capaz de servir futuramente a qualquer produto digital.
+A decisão central passou a ser:
 
-Portanto:
+> **Eva Engine® = Core generalista.**
 
-> Eva Engine® = Core generalista.
-
-> Eva Memory® = primeiro produto consumidor e laboratório real.
-
-Isso é a decisão arquitetural mais importante até agora.
-
----
-
-# 4. Três modos lógicos desejados
-
-Desde o início da discussão foram escolhidas três naturezas de raciocínio:
-
-## Determinístico
-
-Mesma regra/entrada conhecida produz comportamento previsível. Usado para fatos computáveis, parsing, validações e regras explícitas.
-
-## Heurístico
-
-Usa sinais e aproximações quando não existe certeza absoluta. Deve trabalhar com confiança e limites.
-
-## Preditivo
-
-Usa histórico/padrões para estimar tendência futura, sem transformar previsão em verdade.
-
-Essas três naturezas podem coexistir no mesmo motor.
-
----
-
-# 5. Atomização
-
-O motor deve transformar conteúdo bruto em unidades menores, mantendo o original intacto.
-
-Exemplo:
-
-> “Hoje dormi mal porque trabalhei até tarde. Amanhã quero dormir às 22h.”
-
-Pode gerar:
-
-- observação: dormi mal;
-- possível causa: trabalhei até tarde;
-- intenção/experimento: dormir às 22h;
-- temporal: amanhã.
-
-A atomização é matéria-prima para relações, continuidade, aprendizado e gravidade.
-
----
-
-# 6. “Explosão atômica”
-
-A ideia evoluiu para **Expansão Cognitiva Controlada**.
-
-Uma informação nova pode ativar memórias semanticamente próximas, gerar relações e revelar recorrências.
-
-Mas isso precisa de contenção para não virar explosão combinatória.
-
-Limites previstos:
-
-- profundidade;
-- número de candidatos;
-- número de átomos;
-- confiança mínima;
-- tempo;
-- custo;
-- escopo de privacidade.
-
----
-
-# 7. Aprendizado contínuo
+> **Produtos = consumidores do motor.**
 
 Princípio:
 
-> **Usar a Eva é ensinar a Eva.**
+> **Produtos dependem do Eva Engine®. O Eva Engine® não depende de nenhum produto consumidor.**
 
-A Eva deve aprender progressivamente o significado particular do usuário sem redefinir o conhecimento global.
-
-Exemplo:
-
-Se naquele contexto “cérebro” costuma significar arquitetura/backend do projeto, o perfil semântico individual aprende isso.
-
-Correções explícitas valem mais que sinais comportamentais indiretos.
-
-Aprendizado previsto em duas velocidades:
-
-- rápido: após correções/feedbacks importantes;
-- lento: recalibração periódica baseada em padrões consistentes.
+Essa continua sendo uma das decisões arquiteturais mais importantes do projeto.
 
 ---
 
-# 8. Multilíngue desde a arquitetura
+# 4. Nova ampliação de foco: motor empresarial
+
+A ambição foi explicitamente elevada.
+
+O Blueprint deve ser grande o suficiente para permitir que o Eva Engine® futuramente:
+
+- sirva múltiplos produtos;
+- opere em múltiplos domínios;
+- receba eventos de sistemas diferentes;
+- mantenha memória e contexto;
+- relacione informação;
+- aprenda continuamente sob supervisão;
+- seja testável e auditável;
+- seja implantável em cenários empresariais sérios;
+- possa gerar impacto econômico quando isso for demonstrado em pilotos reais.
+
+O projeto **não afirma hoje** que já atende grandes empresas ou economiza milhões. Essa é direção estratégica e hipótese de valor, a ser conquistada por evidência.
+
+Regra:
+
+> **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
+
+---
+
+# 5. Três naturezas lógicas do motor
+
+Desde o início foram escolhidas três naturezas de raciocínio que podem coexistir:
+
+## Determinístico
+
+Usado quando regras, parsing, validação, contexto conhecido ou cálculo explícito podem produzir comportamento previsível.
+
+## Heurístico
+
+Usa sinais e aproximações quando não existe certeza absoluta. Deve trabalhar com limites, evidência e incerteza.
+
+## Preditivo
+
+Usa histórico e padrões para estimar tendência futura sem transformar previsão em verdade.
+
+A bateria anterior reforçou que mecanismos determinísticos podem produzir muito valor e que heurísticas precisam ser cuidadosamente calibradas e avaliadas.
+
+---
+
+# 6. Bateria experimental anterior
+
+Foi realizado um laboratório com 508 cenários sobre mecanismos locais de um protótipo anterior.
+
+Os resultados detalhados estão registrados em:
+
+`16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md`
+
+Lições principais:
+
+- continuidade/retomada e busca local mostraram sinais fortes;
+- mecanismos simples podem compor valor real;
+- heurísticas de associação/classificação podem errar com confiança indevida;
+- algumas abordagens degradaram com escala;
+- recalcular estatística não é aprendizado contínuo real;
+- explicabilidade e silêncio importam;
+- teste pequeno positivo é justificativa para investigar, não prova empresarial.
+
+Esse laboratório é evidência, não destino.
+
+---
+
+# 7. Aprendizado contínuo — definição vigente
+
+Princípio:
+
+> **Usar a Eva pode ensinar a Eva, mas promover o que foi aprendido exige governança.**
+
+A arquitetura distingue pelo menos:
+
+```text
+L1 — aprendizado de sessão/contexto
+L2 — aprendizado individual/tenant/organização
+L3 — aprendizado de domínio
+L4 — aprendizado global
+```
+
+Quanto maior o alcance, maior a necessidade de:
+
+- evidência;
+- evaluator;
+- baseline;
+- versionamento;
+- aprovação;
+- monitoramento;
+- rollback.
+
+Aprendizado não significa simplesmente que os dados mudaram. Deve existir alteração mensurável de comportamento ou parâmetros em função de evidência/feedback.
+
+---
+
+# 8. Crescimento exponencial — significado técnico
+
+“Crescimento exponencial” não significa custo ou processamento descontrolado.
+
+Significa **crescimento por composição**:
+
+```text
+novo idioma
++
+Core existente
++
+ontologia
++
+contexto
++
+aprendizado
+=
+mais capacidades em vários produtos
+```
+
+ou:
+
+```text
+novo Domain Pack
++
+Event Engine
++
+Memory Engine
++
+Relation Engine
+=
+novo domínio sem reconstruir o Core
+```
+
+Documentação central: `15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`.
+
+---
+
+# 9. Três escalas que não devem ser confundidas
+
+## Escala operacional
+
+Volume de eventos, dados, tenants, concorrência, memória e processamento.
+
+## Escala cognitiva
+
+Quantidade/complexidade de contextos, relações, hipóteses, padrões e aprendizagem.
+
+## Escala de domínio
+
+Quantidade/diversidade de setores, produtos, ontologias e políticas especializadas.
+
+Sucesso em uma dimensão não comprova as outras.
+
+---
+
+# 10. Engenharia em camadas — direção vigente
+
+O Blueprint passa a investigar o motor como uma cadeia de responsabilidades:
+
+```text
+EVENTOS / DADOS
+      ↓
+SUBSTRATO DETERMINISTICO
+      ↓
+SINAIS
+      ↓
+REPRESENTACAO ESTRUTURADA
+      ↓
+CONTEXTO
+      ↓
+RECUPERACAO / MEMORIA
+      ↓
+RELACOES
+      ↓
+INFERENCIA
+      ↓
+APRENDIZADO
+      ↓
+EVALUATION PLANE
+      ↓
+ORQUESTRACAO / ORCAMENTO
+      ↓
+GOVERNANCA
+      ↓
+CAPABILITIES / INTEGRACOES
+```
+
+Cada camada deve poder ser testada isoladamente e em composição.
+
+Documento principal desta mudança: `17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`.
+
+---
+
+# 11. Ontologia universal
+
+O Core não deve conhecer antecipadamente todas as áreas humanas ou empresariais.
+
+Ele deve conhecer abstrações universais e meios de extensão:
+
+```text
+Event
+Entity
+Atom
+Relation
+Context
+State
+Time
+Evidence
+Inference
+Feedback
+Memory
+Policy
+Capability
+Schema
+```
+
+Áreas da vida, categorias empresariais, especialidades médicas, departamentos ou tipos de contrato pertencem a Domain Packs/Schemas quando específicos.
+
+---
+
+# 12. “Infinita por dentro”
+
+A visão não é manter uma lista infinita de categorias no Core.
+
+É permitir hierarquias e relações extensíveis:
+
+```text
+DOMAIN
+  └── CONTEXT
+       └── SUBCONTEXT
+            └── SUBJECT
+                 └── ENTITY / EVENT / ATOM
+                      └── RELATIONS
+```
+
+Essa profundidade não é rígida e pode variar por domínio.
+
+---
+
+# 13. Multilíngue desde a arquitetura
 
 O Core não deve nascer em português para depois ser traduzido.
 
-Language Packs reconhecem expressões em cada idioma e convertem para conceitos internos neutros, como:
+Language Packs convertem expressões de diferentes idiomas para conceitos internos neutros, por exemplo:
 
 ```text
 ATOM_DECISION
@@ -146,105 +313,89 @@ ATOM_INTENTION
 REL_CONTINUES
 ```
 
-O objetivo é permitir novos idiomas sem reconstruir o núcleo semântico.
+Adicionar idioma não deve exigir reconstruir a ontologia central.
 
 ---
 
-# 9. Filtros e palavrões
+# 14. Expansão Cognitiva Controlada
 
-A memória original não é censurada.
+A ideia antiga de “explosão atômica” evoluiu para Expansão Cognitiva Controlada.
 
-Palavrões podem ser detectados tecnicamente, mas:
+Um evento pode gerar átomos, ativar contexto, recuperar memória, criar relações candidatas e produzir inferências.
 
-- não são apagados;
-- não equivalem automaticamente a emoção negativa;
-- não bloqueiam atomização;
-- controles de exibição pertencem à camada de produto/política.
+Mas todo ciclo precisa de orçamento:
 
-Exemplo:
+- profundidade;
+- candidatos;
+- átomos;
+- relações;
+- confiança mínima;
+- tempo;
+- custo;
+- memória;
+- prioridade;
+- escopo de privacidade.
 
-> “Caralho, deu certo!”
-
-não pode virar “sentimento negativo” apenas pela palavra usada.
+O motor deve aprender também quando **não** expandir.
 
 ---
 
-# 10. O que movimenta o motor
+# 15. Evaluation Plane
 
-O motor é orientado a eventos.
+Evaluators são parte da arquitetura.
 
-Ele acorda quando algo acontece:
+Nenhuma mudança é “melhoria” apenas porque parece mais inteligente.
+
+Capacidades devem ser comparadas contra baseline com métricas adequadas, como:
+
+- precision;
+- recall;
+- F1;
+- calibration;
+- false positive/negative rate;
+- top-k;
+- cobertura;
+- qualidade de silêncio;
+- latência;
+- custo;
+- estabilidade;
+- regressão;
+- drift;
+- impacto operacional/econômico quando houver piloto real.
+
+---
+
+# 16. Escada de evidência
+
+O projeto agora distingue:
 
 ```text
-content.created
-content.updated
-classification.corrected
-relation.created
-search.performed
-memory.archived
-...
+E0 — ideia
+E1 — prova de mecanismo
+E2 — bateria reproduzível
+E3 — escala sintética
+E4 — piloto de domínio
+E5 — prova operacional
+E6 — prova econômica
 ```
 
-Processa os módulos necessários e volta a ficar ocioso.
-
-A passagem do tempo também pode alterar pesos efetivos, mas a fórmula ainda será definida.
+A arquitetura pode nascer com ambição E6; nenhuma capacidade ganha esse status sem conquistar os degraus.
 
 ---
 
-# 11. Áreas da vida no Eva Memory®
+# 17. Fase privada de P&D
 
-Base atual aprovada:
+Na fase atual:
 
-1. Saúde
-2. Emocional
-3. Família
-4. Relacionamentos
-5. Vida Social
-6. Trabalho & Carreira
-7. Finanças
-8. Projetos & Criação
-9. Estudos & Conhecimento
-10. Casa & Ambiente
-11. Lazer & Experiências
-12. Propósito & Espiritualidade
-13. Desenvolvimento Pessoal
-
-Modelo:
-
-- 13 áreas-base;
-- “EU” não entra na contagem;
-- até 2 áreas personalizadas;
-- total possível: 15 espaços.
-
-A pessoa não deve ser obrigada a classificar manualmente toda nota.
+- documentação técnica permanece no repositório privado autorizado;
+- datasets e resultados de teste permanecem privados salvo decisão explícita;
+- intenção de teste não é publicada automaticamente;
+- protótipos de produto não precisam ser expostos para especificar o Core;
+- resultados internos não devem virar alegações públicas sem revisão.
 
 ---
 
-# 12. Interface atual imaginada
-
-Evitar depender de grafo.
-
-Mobile pode mostrar ranking dinâmico:
-
-```text
-Saúde ↑
-atividade crescente
-
-Projetos & Criação ↑
-retomado recentemente
-
-Finanças →
-estável
-
-Família ↓
-baixa atividade recente
-```
-
-A posição é determinada pela mecânica, mas o usuário recebe uma interface conhecida e simples.
-
----
-
-# 13. Stack atual
+# 18. Stack atual
 
 Direção inicial:
 
@@ -258,53 +409,63 @@ Direção inicial:
 - background workers para processamento profundo;
 - providers intercambiáveis para embeddings/IA;
 - dataset JSON/JSONL versionado;
-- testes unitários, multilíngues, regressão e golden tests.
+- testes unitários, multilíngues, regressão, golden tests, red team, holdout e escala sintética.
+
+Essas são direções iniciais, não dogmas eternos.
 
 ---
 
-# 14. Como continuar em um novo chat
+# 19. Como continuar em um novo chat
 
-Um novo chat NÃO deve reconstruir o projeto do zero.
+Um novo chat NÃO deve reconstruir o projeto do zero e NÃO deve voltar automaticamente para o produto de notas.
 
 Fluxo recomendado:
 
 1. Ler `00_BLUEPRINT_MESTRE.md`.
 2. Ler `01_REGISTRO_DECISOES.md`.
 3. Ler este arquivo.
-4. Identificar qual documento específico está sendo refinado.
-5. Continuar do estado vigente.
-6. Quando uma decisão for aprovada, atualizar o documento especializado, o Blueprint Mestre quando necessário e o Registro de Decisões.
+4. Ler `15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`.
+5. Ler `17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`.
+6. Ler `AGENTS.md`.
+7. Identificar a frente arquitetural vigente.
+8. Continuar do estado atual.
+9. Atualizar documentação quando decisão estrutural mudar.
 
-Evitar perguntas do tipo “me explique novamente o projeto” se a resposta estiver no repositório.
-
----
-
-# 15. Próxima frente de trabalho
-
-A próxima página técnica do Blueprint é a **Ontologia v0**.
-
-Objetivo:
-
-- definir poucos átomos muito bem;
-- formalizar exemplos positivos/negativos;
-- definir ambiguidade;
-- preparar dataset de referência;
-- permitir primeira implementação real no Cursor.
-
-Não tentar resolver toda a linguagem humana na primeira versão.
+Evitar pedir novamente explicação do projeto se ela estiver no repositório.
 
 ---
 
-# 16. Princípio de trabalho do projeto
+# 20. Próxima frente de trabalho
+
+A próxima frente prioritária é definir **Cognitive Kernel + Evidence Model + Evaluation Plane** de forma coordenada.
+
+Questões centrais:
+
+- quais estruturas são realmente irredutíveis no Core;
+- como representar evidência;
+- como separar score de confidence;
+- como modelar incerteza;
+- como compor sinais sem amplificar erro;
+- como medir melhoria;
+- como aprender sem contaminar escopos maiores;
+- como promover e reverter comportamento aprendido.
+
+---
+
+# 21. Princípio de trabalho
 
 O Blueprint é vivo.
 
-Não usar linguagem como “fechado para sempre”. Preferir:
+Preferir:
 
 - base vigente;
 - decisão aprovada;
 - versão atual;
-- pronto para seguir;
-- hipótese em validação.
+- hipótese em validação;
+- pronto para testar.
 
 A arquitetura pode evoluir, desde que a mudança seja explícita, documentada e testável.
+
+Frase-guia desta fase:
+
+> **Não estamos construindo um bloco de notas que ficou grande. Estamos construindo um motor que começou pequeno o suficiente para ser testado.**
