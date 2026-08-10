@@ -51,8 +51,13 @@ infra/
         ├── 12_POLICY_PRIVACIDADE_SEGURANCA.md
         ├── 13_MODELO_DE_DADOS_V0.md
         ├── 14_DOMAIN_PACK_MEMORY.md
-        └── 15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md
+        ├── 15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md
+        └── 16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md
 ```
+
+## Evidência experimental preservada
+
+`16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md` registra achados de uma bateria anterior com 508 cenários sobre mecanismos locais do produto de anotações. O documento é tratado como **evidência histórica**, não como arquitetura-alvo: reaproveitamos método, métricas e falhas observadas sem transportar automaticamente limitações do protótipo para o novo Core.
 
 ## Situação atual
 
@@ -60,6 +65,7 @@ A fundação conceitual e a direção de escala já estão registradas. O foco v
 
 As próximas frentes centrais são:
 
+- Cognitive Kernel e invariantes universais;
 - ontologia universal extensível;
 - hierarquia interna sem profundidade rígida;
 - aprendizado contínuo supervisionado em múltiplos níveis;
