@@ -19,7 +19,7 @@ Depois, consultar os documentos específicos da área em que irá trabalhar.
 
 O Eva Memory® será o primeiro produto consumidor e laboratório real do motor, mas o Core deve nascer generalista.
 
-## Estrutura inicial
+## Blueprint atual
 
 ```text
 infra/
@@ -32,7 +32,20 @@ infra/
         ├── 02_CONTEXTO_CONTINUIDADE.md
         ├── 03_ROADMAP_IMPLEMENTACAO.md
         ├── 04_ONTOLOGIA_V0.md
-        └── 05_EVENTOS_V0.md
+        ├── 05_EVENTOS_V0.md
+        ├── 06_ATOMIZACAO.md
+        ├── 07_APRENDIZADO_CONTINUO.md
+        ├── 08_MULTILINGUE_E_FILTROS.md
+        ├── 09_GRAVIDADE_COGNITIVA.md
+        ├── 10_STACK_E_FERRAMENTAS.md
+        ├── 11_TESTES_E_DATASET.md
+        ├── 12_POLICY_PRIVACIDADE_SEGURANCA.md
+        ├── 13_MODELO_DE_DADOS_V0.md
+        └── 14_DOMAIN_PACK_MEMORY.md
 ```
 
-Esta estrutura será expandida conforme o Blueprint amadurecer.
+## Situação atual
+
+A fundação conceitual já está registrada. O próximo passo é aprofundar a Ontologia v0, gerar o primeiro dataset de casos e então criar a estrutura executável do `eva-engine` no Cursor.
+
+O Blueprint é vivo: decisões podem evoluir, mas mudanças estruturais devem ser registradas e versionadas.
