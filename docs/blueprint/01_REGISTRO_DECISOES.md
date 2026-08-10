@@ -342,11 +342,71 @@ Este arquivo não substitui o Blueprint Mestre. Ele funciona como índice rápid
 
 ---
 
+## D-057 — Envelope e Payload são responsabilidades distintas
+**Status:** aprovada  
+**Decisão:** Cognitive Envelope carrega identidade, scope, lineage, trust, integrity, version e governança; conteúdo semântico vive no payload ou por referência. Metadados pesados podem ser externalizados por referência para controlar overhead.
+
+---
+
+## D-058 — Controlled Unlearning é capacidade necessária
+**Status:** aprovada  
+**Decisão:** aprendizado promovido que se provar inválido precisa poder perder autoridade, ter descendentes localizados por lineage e gerar recomputação/versionamento corrigido sem apagar o histórico auditável.
+
+---
+
+## D-059 — Promoção gera manifesto/versionamento, não mutação silenciosa
+**Status:** aprovada  
+**Decisão:** mudança durável promovida deve produzir versão/artefato identificável com avaliação, escopo, limitações, rollback e provenance; o Trusted Core não muda silenciosamente.
+
+---
+
+## D-060 — Enterprise Integration Boundary é uma trust boundary
+**Status:** aprovada  
+**Decisão:** ERP, CRM, logs, documentos, sensores, APIs, agentes e outros sistemas externos entram/saem por adapters e uma camada de integração/anti-corruption; nenhum sistema externo acessa o Cognitive Kernel diretamente.
+
+---
+
+## D-061 — Tenant/scope é resolvido antes da admissão
+**Status:** aprovada  
+**Decisão:** ingress enterprise precisa resolver tenant e escopo de dados antes do processamento cognitivo. Ambiguidade crítica resulta em rejeição/quarentena, nunca em `default tenant` silencioso.
+
+---
+
+## D-062 — Autenticidade de fonte não equivale a verdade
+**Status:** aprovada  
+**Decisão:** autenticação/integridade de transporte prova quem enviou e se o conteúdo foi alterado no caminho; não concede automaticamente validade epistemológica ao conteúdo. Saída de modelo também não ganha autoridade especial.
+
+---
+
+## D-063 — Ações externas passam por Egress Boundary + Policy
+**Status:** aprovada  
+**Decisão:** capabilities cognitivas podem produzir `ActionRequest`, mas execução em sistemas externos ocorre somente por policy/permission + adapter autorizado e rastreável.
+
+---
+
+## D-064 — Segurança cognitiva é superfície de primeira classe
+**Status:** aprovada  
+**Decisão:** Threat Model protege não apenas código e dados, mas evidence, lineage, learning, promotion, routing, tenant scope e autoridade. Cost amplification/denial-of-wallet também é superfície de ataque.
+
+---
+
+## D-065 — Primeiro heartbeat prova arquitetura antes de sofisticação cognitiva
+**Status:** aprovada  
+**Decisão:** a primeira implementação executável deve provar evento → envelope → scope/policy → registry → orchestration → capability determinística → artifact/evidence/trace → result, sem dependência obrigatória de LLM, embeddings, UI ou domínio específico.
+
+---
+
+## D-066 — Fundação executável começa com interfaces e memória local de teste
+**Status:** aprovada como direção de implementação  
+**Decisão:** contratos, schemas, envelope, registries, policy, budget, orchestration e trace devem ser testáveis com implementações in-memory antes de acoplar PostgreSQL/Supabase, HTTP ou providers externos.
+
+---
+
 # Decisões ainda não fechadas
 
 - ontologia v0 final;
 - relações v0 finais;
-- Atomic/Cognitive Envelope final;
+- representação física final do Atomic/Cognitive Envelope;
 - fórmula final de confidence/calibração;
 - fórmula de gravidade e decaimento temporal;
 - provider inicial de embeddings;
@@ -367,4 +427,13 @@ Este arquivo não substitui o Blueprint Mestre. Ele funciona como índice rápid
 - baseline e métricas dos primeiros evaluators;
 - política de orçamento cognitivo;
 - primeiro problema empresarial para piloto E4;
-- requisitos mínimos para mover uma capacidade de E2 para E3/E4.
+- requisitos mínimos para mover uma capacidade de E2 para E3/E4;
+- repositório definitivo do runtime executável (`infra` vs repositório privado separado, com preferência atual por separado);
+- package manager / monorepo tooling;
+- biblioteca de runtime schema validation;
+- framework HTTP;
+- primeira migration PostgreSQL;
+- modelo authN/authZ;
+- secret manager;
+- estratégia de artifact signing;
+- taxonomia final de sensibilidade de dados.
