@@ -14,21 +14,23 @@ Antes de propor arquitetura, código ou decisões estruturais, qualquer novo cha
 2. `docs/blueprint/24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md`
 3. `docs/blueprint/25_COGNITIVE_KERNEL_V0_1.md`
 4. `docs/blueprint/26_EVIDENCE_MODEL_V0_1.md`
-5. `docs/blueprint/01_REGISTRO_DECISOES.md`
-6. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
-7. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
-8. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
-9. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
-10. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
-11. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
-12. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
-13. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
-14. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
-15. `AGENTS.md`
+5. `docs/blueprint/27_CAPABILITY_HEALTH_SCHEMA_REGISTRIES_V0_1.md`
+6. `docs/blueprint/28_ORCHESTRATION_MODEL_V0_1.md`
+7. `docs/blueprint/01_REGISTRO_DECISOES.md`
+8. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
+9. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
+10. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
+11. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
+12. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
+13. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
+14. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
+15. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
+16. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
+17. `AGENTS.md`
 
 Depois, consultar os documentos especializados da área em que irá trabalhar.
 
-O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md` é a fotografia consolidada da arquitetura enterprise atual. O `25_COGNITIVE_KERNEL_V0_1.md` define o núcleo irredutível. O `26_EVIDENCE_MODEL_V0_1.md` define como sinais conquistam o direito de se tornar evidência, hipótese, inferência e decisão.
+O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md` é a fotografia consolidada da arquitetura enterprise. Os documentos `25` a `28` formalizam o núcleo irredutível, o modelo de evidência, o catálogo vivo de capacidades e a orquestração controlada.
 
 ---
 
@@ -45,6 +47,8 @@ O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQU
 > **O Kernel deve permanecer menor que o ecossistema que ele governa.**
 
 > **Score não é Confidence; repetição não cria evidência independente.**
+
+> **A capability pode pedir para continuar; o Orchestrator decide se o organismo continua.**
 
 ---
 
@@ -91,40 +95,49 @@ ATOMIC / COGNITIVE ENVELOPE
 identity · lineage · trust · integrity · policy · version
           │
           ▼
-╔══════════════════════════════════════════════════════════════╗
-║                 TRUSTED COGNITIVE FABRIC                   ║
-║                                                            ║
-║   Cognitive Kernel                                         ║
-║       │                                                    ║
-║   Orchestrator → Context → Lens Router → Specialists       ║
-║                                  │                         ║
-║                              Crossing                      ║
-║                                  │                         ║
-║                  Atoms · Relations · Signals               ║
-║                                  │                         ║
-║                              Evidence                      ║
-║                                  │                         ║
-║                     Claim / Hypothesis                     ║
-║                                  │                         ║
-║                    Challenger · Counter-Evidence           ║
-║                                  │                         ║
-║                Confidence / Uncertainty / Policy           ║
-║                                  │                         ║
-║                Result + Cognitive Derivatives              ║
-║                                  │                         ║
-║                              New Wave ↺                    ║
-╚══════════════════════════════════════════════════════════════╝
-          │                         │
-          ▼                         ▼
-      CONSUMER              LEARNING CANDIDATES
-                                    │
-                                    ▼
-                           LEARNING QUARANTINE
-                                    │
-                              Promotion Gate
-                                    │
-                                    ▼
-                         promoted/versioned state
+╔════════════════════════════════════════════════════════════════════╗
+║                    TRUSTED COGNITIVE FABRIC                      ║
+║                                                                  ║
+║  Cognitive Kernel                                                ║
+║       │                                                          ║
+║       ▼                                                          ║
+║  Orchestration Control Plane                                     ║
+║  requirement · registry query · admission · plan · budget        ║
+║       │                                                          ║
+║       ▼                                                          ║
+║  Schema Registry · Capability Registry · Health Registry         ║
+║       │                                                          ║
+║       ▼                                                          ║
+║  Execution Plane                                                 ║
+║  Context · Lenses · Specialists · Rules · Models · Agents        ║
+║       │                                                          ║
+║       ▼                                                          ║
+║  Crossing → Signals → Evidence → Claim/Hypothesis                ║
+║       │                                                          ║
+║       ▼                                                          ║
+║  Challenger → Counter-Evidence → Confidence/Uncertainty          ║
+║       │                                                          ║
+║       ▼                                                          ║
+║  Policy → Result + Cognitive Derivatives                         ║
+║                         │                                        ║
+║                         ▼                                        ║
+║                 NextStepCandidate                                ║
+║                         │                                        ║
+║                  Admission Control                               ║
+║                         │                                        ║
+║                    New Wave ↺                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+          │                              │
+          ▼                              ▼
+      CONSUMER                   LEARNING CANDIDATES
+                                         │
+                                         ▼
+                                LEARNING QUARANTINE
+                                         │
+                                   Promotion Gate
+                                         │
+                                         ▼
+                              promoted/versioned state
 
 Integrity & Resilience observa o caminho inteiro.
 Supervisory AI / Human Authority entra por escalonamento quando justificado.
@@ -167,7 +180,9 @@ infra/
         ├── 23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md
         ├── 24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md
         ├── 25_COGNITIVE_KERNEL_V0_1.md
-        └── 26_EVIDENCE_MODEL_V0_1.md
+        ├── 26_EVIDENCE_MODEL_V0_1.md
+        ├── 27_CAPABILITY_HEALTH_SCHEMA_REGISTRIES_V0_1.md
+        └── 28_ORCHESTRATION_MODEL_V0_1.md
 ```
 
 ---
@@ -183,7 +198,9 @@ infra/
 - `23_...` — foco B2B enterprise, dores e tese econômica.
 - `24_...` — Mapa Mestre Enterprise v0.2.
 - `25_...` — Cognitive Kernel v0.1, contratos universais e teste de pureza.
-- `26_...` — Evidence Model v0.1, independência, counter-evidence, causalidade, calibração e thresholds proporcionais ao risco.
+- `26_...` — Evidence Model v0.1, independência, counter-evidence, causalidade e calibração.
+- `27_...` — Schema, Capability e Health Registries; catálogo vivo, dependency/fallback graph e health técnico/cognitivo/econômico.
+- `28_...` — Orchestration Model v0.1; Control/Execution Plane, Work Graph, budgets, Admission Control, fan-out, stop, backpressure, circuit breakers e escalonamento.
 
 ---
 
@@ -196,15 +213,15 @@ Cognitive Kernel v0.1
         ↓
 Evidence Model v0.1
         ↓
+Capability + Health + Schema Registries v0.1
+        ↓
+Orchestration Model v0.1
+        ↓
 Atomic / Cognitive Envelope final
         ↓
-Capability + Health + Schema Registries
+Integrity & Resilience v0.1
         ↓
-Orchestration Model
-        ↓
-Integrity & Resilience
-        ↓
-Learning Quarantine / Promotion
+Learning Quarantine / Promotion final
         ↓
 Evaluation Plane
         ↓
