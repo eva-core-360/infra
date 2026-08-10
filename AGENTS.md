@@ -9,7 +9,8 @@ Antes de trabalhar:
 1. `docs/blueprint/00_BLUEPRINT_MESTRE.md`
 2. `docs/blueprint/01_REGISTRO_DECISOES.md`
 3. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
-4. documento específico da área em que será feita a alteração
+4. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
+5. documento específico da área em que será feita a alteração
 
 ## Regra de autoridade arquitetural
 
@@ -32,6 +33,13 @@ O Blueprint vigente é a referência arquitetural. O agente não deve transforma
 13. Começar como monólito modular; microserviços só quando houver necessidade comprovada.
 14. Toda mudança de comportamento relevante deve ter teste.
 15. Toda mudança estrutural deve atualizar a documentação correspondente.
+16. A implementação inicial pode ser pequena; a arquitetura não deve ser estreita.
+17. Crescimento deve ocorrer prioritariamente por composição, registries, schemas, Domain Packs e capabilities.
+18. Aprendizado contínuo não significa auto-modificação irrestrita do código ou do conhecimento global.
+19. Mudanças globais aprendidas exigem avaliação, versionamento, promoção e possibilidade de rollback.
+20. Evaluators e baselines são obrigatórios para afirmar que uma versão cognitiva melhorou.
+21. O Core não deve impor profundidade fixa de hierarquia específica de um produto.
+22. Novas capacidades devem ser descobríveis e versionáveis por Capability Registry quando essa infraestrutura estiver implementada.
 
 ## Processo de implementação
 
@@ -50,7 +58,9 @@ TESTES
   ↓
 OBSERVAÇÃO
   ↓
-AJUSTE
+AVALIAÇÃO CONTRA BASELINE
+  ↓
+AJUSTE / PROMOÇÃO / REJEIÇÃO
 ```
 
 Não inverter para “gerar código e depois descobrir qual era a regra”.
@@ -76,7 +86,36 @@ Não inverter para “gerar código e depois descobrir qual era a regra”.
 - estratégia de persistência;
 - limites da expansão cognitiva;
 - contratos públicos da API/SDK;
-- dependência estrutural de um fornecedor externo.
+- dependência estrutural de um fornecedor externo;
+- critérios de promoção de aprendizado;
+- Capability Registry;
+- Schema Registry;
+- mudanças de hierarquia universal;
+- comportamento global aprendido.
+
+## Aprendizado contínuo
+
+A arquitetura distingue pelo menos quatro níveis:
+
+```text
+L1 — sessão/contexto
+L2 — individual/tenant
+L3 — domínio
+L4 — global
+```
+
+Quanto maior o alcance da mudança, maior deve ser a exigência de:
+
+- evidência;
+- dataset de validação;
+- evaluator;
+- comparação com baseline;
+- aprovação;
+- versionamento;
+- monitoramento;
+- rollback.
+
+Um agente não deve promover automaticamente padrões locais para o conhecimento global.
 
 ## Critério para dependências
 
@@ -98,7 +137,9 @@ Código novo deve buscar:
 - baixo acoplamento;
 - logs estruturados para pipeline cognitivo;
 - testes de regressão;
-- versionamento de regras relevantes.
+- versionamento de regras relevantes;
+- métricas de latência, custo e qualidade quando aplicável;
+- compatibilidade de schema e migrações não destrutivas quando possível.
 
 ## Linguagem e nomenclatura
 
@@ -109,6 +150,7 @@ Exemplo preferido:
 ```text
 ATOM_DECISION
 REL_CONTINUES
+CAP_ATOMIZATION
 ```
 
 Evitar conceitos universais nomeados apenas em português dentro do modelo canônico.
@@ -116,3 +158,5 @@ Evitar conceitos universais nomeados apenas em português dentro do modelo canô
 ## Regra final
 
 > Se uma decisão tornar o primeiro protótipo mais rápido, mas impedir o Eva Engine® de permanecer generalista, ela deve ser isolada no Domain Pack ou no produto, não embutida no Core.
+
+> Se uma decisão parecer “mais inteligente”, mas não puder ser medida, rastreada e revertida, ela ainda não está pronta para promoção estrutural.
