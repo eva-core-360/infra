@@ -20,21 +20,25 @@ Antes de propor arquitetura, código ou decisões estruturais, qualquer novo cha
 8. `docs/blueprint/30_INTEGRITY_RESILIENCE_PLANE_V0_1.md`
 9. `docs/blueprint/31_EVALUATION_PLANE_V0_1.md`
 10. `docs/blueprint/32_OBSERVABILITY_COGNITIVE_ECONOMICS_V0_1.md`
-11. `docs/blueprint/01_REGISTRO_DECISOES.md`
-12. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
-13. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
-14. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
-15. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
-16. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
-17. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
-18. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
-19. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
-20. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
-21. `AGENTS.md`
+11. `docs/blueprint/33_LEARNING_QUARANTINE_PROMOTION_UNLEARNING_V1_0.md`
+12. `docs/blueprint/34_ENTERPRISE_INTEGRATION_BOUNDARY_V0_1.md`
+13. `docs/blueprint/35_ENTERPRISE_COGNITIVE_THREAT_MODEL_V0_1.md`
+14. `docs/blueprint/36_EXECUTABLE_ARCHITECTURE_SPEC_V0_1.md`
+15. `docs/blueprint/01_REGISTRO_DECISOES.md`
+16. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
+17. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
+18. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
+19. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
+20. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
+21. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
+22. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
+23. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
+24. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
+25. `AGENTS.md`
 
 Depois, consultar os documentos especializados da área em que irá trabalhar.
 
-O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md` é a fotografia consolidada da arquitetura enterprise. Os documentos `25` a `32` formalizam o núcleo irredutível, o modelo de evidência, registries, orquestração, envelope cognitivo, integridade/resiliência, avaliação e observabilidade/economia cognitiva.
+O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md` é a fotografia consolidada da arquitetura enterprise. Os documentos `25` a `36` formalizam núcleo, evidência, registries, orquestração, circulação, resiliência, avaliação, economia cognitiva, aprendizagem isolada, integração enterprise, threat model e primeiro heartbeat executável.
 
 ---
 
@@ -59,6 +63,12 @@ O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQU
 > **Uma versão só melhora quando supera o baseline sem violar hard gates de segurança, privacidade, custo e integridade.**
 
 > **O motor precisa saber quanto custou pensar e se o ganho justificou o trabalho.**
+
+> **Aprender é propor mudança; promover é conceder autoridade.**
+
+> **A empresa não entra no Core; atravessa uma membrana que traduz, limita, autentica e deixa rastro.**
+
+> **O primeiro coração não precisa pensar muito. Precisa bater certo.**
 
 ---
 
@@ -97,8 +107,8 @@ ENTERPRISE ENVIRONMENT
 ERP · CRM · logs · docs · finance · support · APIs · sensors · humans
           │
           ▼
-BOUNDARY / INGESTION
-schema · auth · scope · provenance · validation · normalization
+ENTERPRISE INTEGRATION BOUNDARY
+adapter · auth · tenant · scope · schema · provenance · idempotency
           │
           ▼
 ATOMIC / COGNITIVE ENVELOPE
@@ -145,7 +155,7 @@ trust · integrity · policy · version · lineage · trace
                                          ▼
                                 LEARNING QUARANTINE
                                          │
-                                   Promotion Gate
+                             Evaluation + Promotion Gate
                                          │
                                          ▼
                               promoted/versioned state
@@ -153,6 +163,7 @@ trust · integrity · policy · version · lineage · trace
 Integrity & Resilience observa o caminho inteiro.
 Evaluation Plane compara capability, composição e sistema contra baselines.
 Observability & Cognitive Economics mede comportamento, custo, escalonamento e valor marginal.
+Threat Model cobre dados, evidence, learning, scope, promotion, agents e cost attacks.
 Supervisory AI / Human Authority entra por escalonamento quando justificado.
 ```
 
@@ -198,7 +209,11 @@ infra/
         ├── 29_ATOMIC_COGNITIVE_ENVELOPE_V1_0.md
         ├── 30_INTEGRITY_RESILIENCE_PLANE_V0_1.md
         ├── 31_EVALUATION_PLANE_V0_1.md
-        └── 32_OBSERVABILITY_COGNITIVE_ECONOMICS_V0_1.md
+        ├── 32_OBSERVABILITY_COGNITIVE_ECONOMICS_V0_1.md
+        ├── 33_LEARNING_QUARANTINE_PROMOTION_UNLEARNING_V1_0.md
+        ├── 34_ENTERPRISE_INTEGRATION_BOUNDARY_V0_1.md
+        ├── 35_ENTERPRISE_COGNITIVE_THREAT_MODEL_V0_1.md
+        └── 36_EXECUTABLE_ARCHITECTURE_SPEC_V0_1.md
 ```
 
 ---
@@ -209,50 +224,58 @@ infra/
 - `18_...` — Lentes Cognitivas componíveis.
 - `19_...` — arquitetura 360 orbital e hierarquia de agentes/guards.
 - `20_...` — Explosão Atômica Recursiva em ondas e escalonamento seletivo de IA.
-- `21_...` — Learning Quarantine, Promotion Gate e recuperação de erro.
+- `21_...` — fundação histórica do segundo círculo: Learning Quarantine, Promotion Gate e recuperação.
 - `22_...` — organismo cognitivo, Atomic Envelope, integridade e resiliência.
 - `23_...` — foco B2B enterprise, dores e tese econômica.
 - `24_...` — Mapa Mestre Enterprise v0.2.
-- `25_...` — Cognitive Kernel v0.1, contratos universais e teste de pureza.
-- `26_...` — Evidence Model v0.1, independência, counter-evidence, causalidade e calibração.
-- `27_...` — Schema, Capability e Health Registries; catálogo vivo, dependency/fallback graph e health técnico/cognitivo/econômico.
-- `28_...` — Orchestration Model v0.1; Control/Execution Plane, Work Graph, budgets, Admission Control, fan-out, stop, backpressure, circuit breakers e escalonamento.
-- `29_...` — Atomic/Cognitive Envelope v1.0; identidade, scope, provenance, root/correlation/causation, três eixos de estado, idempotência, temporalidade, privacy, version vector e overhead controlado.
-- `30_...` — Integrity & Resilience Plane v0.1; fault classes, containment zones, taint propagation, blast radius, circuit breakers, safe modes, recovery, verification e fault injection.
-- `31_...` — Evaluation Plane v0.1; baselines, golden/holdout, slices, scorecards, calibration, shadow/canary, ablation, economic evaluation e promotion gates.
-- `32_...` — Observability & Cognitive Economics v0.1; traces, metrics, cost attribution, AI/human escalation economics, marginal value, Cost/Value Ledgers e budget observability.
+- `25_...` — Cognitive Kernel v0.1.
+- `26_...` — Evidence Model v0.1.
+- `27_...` — Schema, Capability e Health Registries.
+- `28_...` — Orchestration Model v0.1.
+- `29_...` — Atomic/Cognitive Envelope v1.0.
+- `30_...` — Integrity & Resilience Plane v0.1.
+- `31_...` — Evaluation Plane v0.1.
+- `32_...` — Observability & Cognitive Economics v0.1.
+- `33_...` — Learning Quarantine, Promotion & Controlled Unlearning v1.0; consolida isolamento, manifests, checkpoints, replay e revogação de influência aprendida.
+- `34_...` — Enterprise Integration Boundary v0.1; adapters, Anti-Corruption Layer, tenant/scope, ingest/egress, replay/backfill, idempotência e Integration Health.
+- `35_...` — Enterprise Cognitive Threat Model v0.1; protege código, dados, evidence, learning, promotion, scope, agents, orchestration, evaluation e custo.
+- `36_...` — Executable Architecture Spec v0.1; define o primeiro heartbeat executável e a ordem de implementação no Cursor.
 
 ---
 
 ## Foco vigente
 
-As próximas frentes centrais são:
+O Blueprint arquitetural já possui base suficiente para iniciar o primeiro heartbeat executável sem abandonar as frentes de pesquisa de longo prazo.
+
+Próxima sequência:
 
 ```text
-Cognitive Kernel v0.1
+Executable Architecture Spec v0.1
         ↓
-Evidence Model v0.1
+criar repositório/runtime executável privado
         ↓
-Capability + Health + Schema Registries v0.1
+Cursor — STEP 1
+contracts + schemas + envelope
         ↓
-Orchestration Model v0.1
+STEP 2
+registries + policy + budget
         ↓
-Atomic / Cognitive Envelope v1.0
+STEP 3
+orchestrator + deterministic capability + trace
         ↓
-Integrity & Resilience v0.1
+STEP 4
+integrity + API + persistence adapter
         ↓
-Evaluation Plane v0.1
+CI + fault injection + benchmark
         ↓
-Observability & Cognitive Economics v0.1
+Heartbeat v0.1
         ↓
-Learning Quarantine / Promotion final
+capabilities cognitivas progressivamente mais sofisticadas
         ↓
-Enterprise Integration
-        ↓
-Threat Model / Fault Injection
-        ↓
-primeiro piloto B2B E4
+primeiro piloto B2B E4 após evidência suficiente
 ```
+
+Questão imediata ainda aberta: confirmar se o runtime executável viverá em repositório privado separado (preferência arquitetural atual: `eva-core-360/engine` ou equivalente) ou no próprio `infra`.
 
 O projeto permanece em fase privada de P&D. Documentação, datasets, intenção experimental e resultados permanecem no repositório/contextos autorizados salvo decisão explícita de divulgação.
 
