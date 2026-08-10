@@ -13,7 +13,8 @@ Antes de propor arquitetura, código ou decisões estruturais, qualquer pessoa o
 5. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
 6. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
 7. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
-8. `AGENTS.md`
+8. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
+9. `AGENTS.md`
 
 Depois, consultar os documentos específicos da área em que irá trabalhar.
 
@@ -64,7 +65,8 @@ infra/
         ├── 16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md
         ├── 17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md
         ├── 18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md
-        └── 19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md
+        ├── 19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md
+        └── 20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md
 ```
 
 ## Evidência experimental preservada
@@ -74,6 +76,8 @@ infra/
 `18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md` registra a análise arquitetural de um acervo privado anterior com 32 fichas neuro/cognitivas. O conteúdo original não é reproduzido: a leitura propõe estudar essas fichas como **Lentes Cognitivas componíveis**, não como 32 primitivas rígidas do Core.
 
 `19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md` formaliza o significado arquitetural do **360**: Core no centro, órbita extensível de lentes, agentes, guards, challengers, evaluators e policies, com ativação seletiva, orçamento e critérios de parada. Também registra a pista histórica de uma hierarquia 32 → 12 → 8 sem inventar o mapeamento ausente no recorte disponível.
+
+`20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md` formaliza a **Explosão Atômica como ciclo recursivo em ondas**: cada processamento pode gerar resultado externo, derivados cognitivos e candidatos de aprendizagem; derivados podem se fragmentar e reentrar no motor, sempre com lineage, orçamento, novidade, ganho de informação e condição de parada. Também estabelece a direção de resolver o máximo possível com mecânica, estatística e especialistas locais antes de escalar para IA supervisora.
 
 ## Foco vigente
 
@@ -98,8 +102,12 @@ substrato determinístico
 → cruzamento
 → relações/inferência
 → challenger/contraprova
-→ aprendizado
 → avaliação
+→ policy
+→ resultado
+→ derivados cognitivos
+→ nova onda
+→ aprendizado
 → orquestração
 → governança
 ```
@@ -112,6 +120,9 @@ As próximas frentes centrais são:
 - Cognitive Lens Registry / Lens Stacks e orquestração seletiva;
 - arquitetura de agentes/guards determinísticos, heurísticos e opcionais por modelo;
 - Challenger/Critic e mecanismos de contraprova;
+- formalização de `Cognitive Derivative`, `Learning Candidate` e `Wave`;
+- métricas de novidade, ganho de informação e valor marginal entre ondas;
+- Supervisory AI Plane e critérios de escalonamento;
 - aprendizado contínuo supervisionado em múltiplos níveis;
 - Capability Registry e Schema Registry;
 - event log, lineage, rastreabilidade e versionamento cognitivo;
