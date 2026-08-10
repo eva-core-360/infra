@@ -17,21 +17,23 @@ Antes de propor arquitetura, código ou decisões estruturais, qualquer novo cha
 5. `docs/blueprint/27_CAPABILITY_HEALTH_SCHEMA_REGISTRIES_V0_1.md`
 6. `docs/blueprint/28_ORCHESTRATION_MODEL_V0_1.md`
 7. `docs/blueprint/29_ATOMIC_COGNITIVE_ENVELOPE_V1_0.md`
-8. `docs/blueprint/01_REGISTRO_DECISOES.md`
-9. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
-10. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
-11. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
-12. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
-13. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
-14. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
-15. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
-16. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
-17. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
-18. `AGENTS.md`
+8. `docs/blueprint/30_INTEGRITY_RESILIENCE_PLANE_V0_1.md`
+9. `docs/blueprint/31_EVALUATION_PLANE_V0_1.md`
+10. `docs/blueprint/01_REGISTRO_DECISOES.md`
+11. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
+12. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
+13. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
+14. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
+15. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
+16. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
+17. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
+18. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
+19. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
+20. `AGENTS.md`
 
 Depois, consultar os documentos especializados da área em que irá trabalhar.
 
-O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md` é a fotografia consolidada da arquitetura enterprise. Os documentos `25` a `29` formalizam o núcleo irredutível, o modelo de evidência, o catálogo vivo de capacidades, a orquestração controlada e o contrato de circulação dos artefatos cognitivos.
+O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md` é a fotografia consolidada da arquitetura enterprise. Os documentos `25` a `31` formalizam o núcleo irredutível, o modelo de evidência, registries, orquestração, envelope cognitivo, integridade/resiliência e avaliação.
 
 ---
 
@@ -52,6 +54,8 @@ O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQU
 > **A capability pode pedir para continuar; o Orchestrator decide se o organismo continua.**
 
 > **Inteligência pode se fragmentar; identidade, origem e responsabilidade não podem se perder.**
+
+> **Uma versão só melhora quando supera o baseline sem violar hard gates de segurança, privacidade, custo e integridade.**
 
 ---
 
@@ -144,6 +148,7 @@ trust · integrity · policy · version · lineage · trace
                               promoted/versioned state
 
 Integrity & Resilience observa o caminho inteiro.
+Evaluation Plane compara capability, composição e sistema contra baselines.
 Supervisory AI / Human Authority entra por escalonamento quando justificado.
 Observability & Economics mede qualidade, latência, custo e taxa de escalonamento.
 ```
@@ -187,7 +192,9 @@ infra/
         ├── 26_EVIDENCE_MODEL_V0_1.md
         ├── 27_CAPABILITY_HEALTH_SCHEMA_REGISTRIES_V0_1.md
         ├── 28_ORCHESTRATION_MODEL_V0_1.md
-        └── 29_ATOMIC_COGNITIVE_ENVELOPE_V1_0.md
+        ├── 29_ATOMIC_COGNITIVE_ENVELOPE_V1_0.md
+        ├── 30_INTEGRITY_RESILIENCE_PLANE_V0_1.md
+        └── 31_EVALUATION_PLANE_V0_1.md
 ```
 
 ---
@@ -207,6 +214,8 @@ infra/
 - `27_...` — Schema, Capability e Health Registries; catálogo vivo, dependency/fallback graph e health técnico/cognitivo/econômico.
 - `28_...` — Orchestration Model v0.1; Control/Execution Plane, Work Graph, budgets, Admission Control, fan-out, stop, backpressure, circuit breakers e escalonamento.
 - `29_...` — Atomic/Cognitive Envelope v1.0; identidade, scope, provenance, root/correlation/causation, três eixos de estado, idempotência, temporalidade, privacy, version vector e overhead controlado.
+- `30_...` — Integrity & Resilience Plane v0.1; fault classes, containment zones, taint propagation, blast radius, circuit breakers, safe modes, recovery, verification e fault injection.
+- `31_...` — Evaluation Plane v0.1; baselines, golden/holdout, slices, scorecards, calibration, shadow/canary, ablation, economic evaluation e promotion gates.
 
 ---
 
@@ -227,9 +236,9 @@ Atomic / Cognitive Envelope v1.0
         ↓
 Integrity & Resilience v0.1
         ↓
-Learning Quarantine / Promotion final
+Evaluation Plane v0.1
         ↓
-Evaluation Plane
+Learning Quarantine / Promotion final
         ↓
 Observability + Economics
         ↓
