@@ -7,19 +7,22 @@ Este repositório é a fonte de verdade arquitetural do **Eva Engine®**, núcle
 Antes de propor arquitetura, código ou decisões estruturais, qualquer pessoa ou agente deve ler, nesta ordem:
 
 1. `docs/blueprint/00_BLUEPRINT_MESTRE.md`
-2. `docs/blueprint/01_REGISTRO_DECISOES.md`
-3. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
-4. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
-5. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
-6. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
-7. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
-8. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
-9. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
-10. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
-11. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
-12. `AGENTS.md`
+2. `docs/blueprint/24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md`
+3. `docs/blueprint/01_REGISTRO_DECISOES.md`
+4. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
+5. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
+6. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
+7. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
+8. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
+9. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
+10. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
+11. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
+12. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
+13. `AGENTS.md`
 
 Depois, consultar os documentos específicos da área em que irá trabalhar.
+
+O `00_BLUEPRINT_MESTRE.md` preserva a fundação canônica inicial; o `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md` é a **fotografia consolidada mais atual** após a virada para organismo cognitivo, explosão atômica recursiva, quarentena de aprendizado e foco B2B enterprise.
 
 ## Princípio central
 
@@ -94,7 +97,8 @@ infra/
         ├── 20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md
         ├── 21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md
         ├── 22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md
-        └── 23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md
+        ├── 23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md
+        └── 24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md
 ```
 
 ## Evidência e conceitos preservados
@@ -106,6 +110,7 @@ infra/
 - `21_...` cria o **Learning Quarantine Plane**: candidatos de aprendizagem e derivados experimentais ficam fora do Trusted Core; só atravessam por Promotion Gate após avaliação, versionamento e possibilidade de recuperação/rollback.
 - `22_...` formaliza o motor como **organismo cognitivo de responsabilidades especializadas**, com Atomic Envelope, Integrity & Resilience Plane, health, watchdogs, quarantine, recuperação e detecção de peças ausentes/degradadas.
 - `23_...` registra o foco **B2B enterprise**, a pilha de dores corporativas e a tese econômica de IA seletiva, auditável e proporcional ao valor produzido.
+- `24_...` consolida a arquitetura vigente em um **Mapa Mestre Enterprise v0.2**, ligando ingestão, envelope atômico, Cognitive Fabric, lenses, specialists, challenger, evaluation, quarantine, supervision, resiliência, observabilidade e economia.
 
 ## Foco vigente
 
