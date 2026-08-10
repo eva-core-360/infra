@@ -260,11 +260,56 @@ Este arquivo não substitui o Blueprint Mestre. Ele funciona como índice rápid
 
 ---
 
+## D-037 — Foco vigente é o motor, não o produto de notas
+
+**Status:** aprovada  
+**Decisão:** protótipos e mecanismos de notas passam a ser tratados como laboratórios e evidência experimental. O objeto principal do Blueprint é o Eva Engine® como infraestrutura cognitiva generalista.
+
+---
+
+## D-038 — Ambição empresarial sem alegação prematura
+
+**Status:** aprovada como direção estratégica  
+**Decisão:** o motor deve ser arquitetado para futuramente atender produtos e organizações de grande escala, inclusive cenários de alto impacto econômico. Nenhuma alegação de ROI, economia ou capacidade empresarial será feita sem prova operacional apropriada.
+
+---
+
+## D-039 — Escada de evidência
+
+**Status:** aprovada como referência metodológica  
+**Decisão:** distinguir E0 ideia, E1 prova de mecanismo, E2 bateria reproduzível, E3 escala sintética, E4 piloto de domínio, E5 prova operacional e E6 prova econômica.
+
+---
+
+## D-040 — Três escalas independentes
+
+**Status:** aprovada  
+**Decisão:** separar escala operacional, escala cognitiva e escala de domínio. Sucesso em uma dimensão não comprova sucesso nas outras.
+
+---
+
+## D-041 — Fase privada de P&D
+
+**Status:** aprovada para a fase atual  
+**Decisão:** documentação, datasets, intenção experimental e resultados permanecem privados no repositório e contextos autorizados salvo decisão explícita de divulgação.
+
+---
+
+## D-042 — Hipóteses precisam de definição operacional
+
+**Status:** aprovada  
+**Decisão:** nenhum mecanismo deve ser promovido usando termos como inteligência, aprendizado, confiança, escala ou economia sem definição operacional, baseline e teste adequado.
+
+---
+
 # Decisões ainda não fechadas
 
 - ontologia v0 final;
 - relações v0 finais;
-- fórmula de confiança;
+- Cognitive Kernel final;
+- Evidence Model final;
+- separação formal entre score, confidence, evidence e inference;
+- fórmula de confiança/calibração;
 - fórmula de gravidade;
 - decaimento temporal;
 - provider inicial de embeddings;
@@ -274,4 +319,7 @@ Este arquivo não substitui o Blueprint Mestre. Ele funciona como índice rápid
 - limites numéricos iniciais da expansão cognitiva;
 - critérios objetivos de promoção entre níveis de aprendizagem;
 - formato inicial do Capability Registry;
-- baseline e métricas dos primeiros evaluators.
+- baseline e métricas dos primeiros evaluators;
+- política de orçamento cognitivo;
+- primeiro domínio empresarial para piloto E4;
+- requisitos mínimos para mover uma capacidade de E2 para E3 e E4.
