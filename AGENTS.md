@@ -7,17 +7,22 @@ Este arquivo deve ser lido por qualquer agente de código, Cursor, assistente ou
 Antes de trabalhar:
 
 1. `docs/blueprint/00_BLUEPRINT_MESTRE.md`
-2. `docs/blueprint/01_REGISTRO_DECISOES.md`
-3. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
-4. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
-5. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
-6. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
-7. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
-8. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
-9. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
-10. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
-11. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
-12. documento específico da área em que será feita a alteração
+2. `docs/blueprint/24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md`
+3. `docs/blueprint/25_COGNITIVE_KERNEL_V0_1.md`
+4. `docs/blueprint/26_EVIDENCE_MODEL_V0_1.md`
+5. `docs/blueprint/27_CAPABILITY_HEALTH_SCHEMA_REGISTRIES_V0_1.md`
+6. `docs/blueprint/28_ORCHESTRATION_MODEL_V0_1.md`
+7. `docs/blueprint/01_REGISTRO_DECISOES.md`
+8. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
+9. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
+10. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
+11. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
+12. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
+13. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
+14. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
+15. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
+16. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
+17. documento específico da área em que será feita a alteração
 
 ## Autoridade arquitetural
 
@@ -27,48 +32,58 @@ O Blueprint vigente é a referência. Nenhum agente deve transformar preferênci
 
 O objeto principal é o **Eva Engine® como infraestrutura cognitiva generalista e potencial motor B2B enterprise**. Protótipos anteriores são laboratórios e evidência, não o limite conceitual do projeto.
 
-A barra de engenharia é enterprise: auditabilidade, isolamento, custo, governança, resiliência, observabilidade, segurança, recuperação e prova econômica devem ser considerados desde o Blueprint, mesmo quando a primeira implementação executável for pequena.
+A barra de engenharia é enterprise: auditabilidade, isolamento, custo, governança, resiliência, observabilidade, segurança, recuperação e prova econômica devem ser consideradas desde o Blueprint, mesmo quando a primeira implementação executável for pequena.
 
 ## Regras não negociáveis da base atual
 
 1. O Eva Engine® é generalista; produtos são consumidores.
 2. Produtos dependem do Core; o Core não depende de produtos.
 3. Conteúdo original nunca é sobrescrito pela interpretação.
-4. RAW, DERIVED, INFERRED e LEARNED permanecem conceitualmente separados.
-5. Inferências possuem confiança, evidência e rastreabilidade adequadas ao risco.
-6. Correções são reversíveis e não apagam histórico relevante.
-7. Aprendizado individual não altera automaticamente conhecimento global.
-8. O motor nasce multilíngue por arquitetura.
-9. O sistema é orientado a eventos.
-10. Expansão e Explosão Atômica possuem limites explícitos de profundidade, custo, risco, novidade e parada.
-11. O Core não depende de grafo visual.
-12. O Core não fica acoplado a fornecedor específico de IA, embeddings ou nuvem.
-13. Começar como monólito modular; microserviços somente quando justificados.
-14. Mudança de comportamento relevante exige teste.
-15. Mudança estrutural exige atualização documental.
-16. A implementação inicial pode ser pequena; a arquitetura não deve ser estreita.
-17. Crescimento ocorre prioritariamente por composição, registries, schemas, Domain Packs, lenses e capabilities.
-18. Aprendizado contínuo não significa auto-modificação irrestrita.
-19. Mudanças globais aprendidas exigem avaliação, versionamento, promoção e rollback.
-20. Evaluators e baselines são obrigatórios para afirmar melhoria cognitiva.
-21. O Core não impõe profundidade fixa de hierarquia de produto.
-22. Capacidades devem ser descobríveis/versionáveis quando o Capability Registry existir.
-23. Resultado de protótipo é evidência, não arquitetura-alvo automática.
-24. Termos como aprendizado, confiança, inteligência, escala e economia exigem definição operacional testável.
-25. Escala operacional, cognitiva e de domínio são problemas distintos.
-26. Informação da fase privada de P&D não deve ser publicada ou enviada para fora do contexto autorizado sem decisão explícita.
-27. **Learning Candidates, derivados experimentais e heurísticas candidatas não podem escrever diretamente no Trusted Core.**
-28. **Toda promoção do Learning Quarantine para o Trusted Core precisa passar por Promotion Gate rastreável e versionado.**
-29. **Toda capacidade promovida relevante precisa ter caminho de revogação, correção ou rollback.**
-30. **Derivados recursivos precisam preservar lineage suficiente para localizar ancestralidade e calcular blast radius de um erro.**
-31. IA supervisora é permitida e esperada quando agrega valor; não deve ser chamada onde um mecanismo mais simples resolve com qualidade equivalente ou superior.
-32. **Átomos e derivados relevantes devem circular com Atomic/Cognitive Envelope suficiente para provenance, scope, lineage, integrity e policy.**
-33. **Integrity & Resilience Plane deve detectar degradação, anomalia, ausência de capability crítica e risco de propagação antes que falhas silenciosas contaminem o resultado.**
-34. **Falha conhecida é preferível a sucesso aparente produzido com uma peça crítica ausente.**
-35. Auto-recuperação só pode alterar automaticamente estados e componentes cuja recuperação seja segura, idempotente ou explicitamente testada.
-36. **B2B enterprise é o horizonte estratégico vigente; o motor deve medir custo, escalonamento para IA/humano e impacto operacional desde que aplicável.**
-37. Nenhuma alegação de economia, ROI ou superioridade empresarial pode ser feita sem baseline e nível de evidência correspondente.
-38. A tese econômica é usar o mecanismo mais barato/previsível que satisfaça o requisito e escalar para IA potente quando houver ganho mensurável — não eliminar IA por princípio.
+4. RAW, DERIVED, INFERRED e LEARNED permanecem separados.
+5. Signal, Evidence, Claim/Hypothesis, Score, Confidence e Decision não são sinônimos.
+6. Score não vira confidence sem calibração apropriada.
+7. Repetição/derivação da mesma ancestralidade não cria evidência independente automaticamente.
+8. Correções são reversíveis e não apagam histórico necessário.
+9. Aprendizado individual/tenant não altera automaticamente conhecimento global.
+10. O motor nasce multilíngue por arquitetura.
+11. O sistema é orientado a eventos.
+12. Explosão Atômica Recursiva possui limites de profundidade, waves, fan-out, custo, tempo, risco, novidade e parada.
+13. O Core não depende de UI, grafo visual, fornecedor específico de IA, embeddings ou nuvem.
+14. Começar como monólito modular; microserviços somente quando justificados.
+15. Mudança de comportamento relevante exige teste.
+16. Mudança estrutural exige atualização documental.
+17. A implementação inicial pode ser pequena; a arquitetura não deve ser estreita.
+18. Crescimento ocorre por composição, registries, schemas, Domain Packs, lenses e capabilities.
+19. Aprendizado contínuo não significa auto-modificação irrestrita.
+20. Mudanças globais aprendidas exigem avaliação, versionamento, promoção e rollback.
+21. Evaluators e baselines são obrigatórios para afirmar melhoria cognitiva.
+22. O Core não impõe profundidade fixa de hierarquia de produto.
+23. Informação da fase privada de P&D não deve ser publicada ou enviada para fora do contexto autorizado sem decisão explícita.
+24. Learning Candidates, derivados experimentais e heurísticas candidatas não escrevem diretamente no Trusted Core.
+25. Toda promoção do Learning Quarantine para o Trusted Core passa por Promotion Gate rastreável e versionado.
+26. Toda capacidade promovida relevante possui caminho de revogação, correção ou rollback.
+27. Derivados recursivos preservam lineage suficiente para ancestralidade, independência de evidência e blast radius.
+28. Átomos e derivados relevantes circulam com Atomic/Cognitive Envelope suficiente para provenance, scope, lineage, integrity, version e policy.
+29. Integrity & Resilience deve detectar degradação, anomalia, ausência de capability crítica e risco de propagação.
+30. Falha conhecida é preferível a sucesso aparente produzido com peça crítica ausente.
+31. Auto-recuperação automática só atua em estados/componentes cuja recuperação seja segura, idempotente ou explicitamente testada.
+32. B2B enterprise é o horizonte estratégico vigente; custo, escalonamento para IA/humano e impacto operacional devem ser medidos quando aplicável.
+33. Nenhuma alegação de economia, ROI ou superioridade empresarial sem baseline e nível de evidência correspondente.
+34. A tese econômica é usar o mecanismo mais barato/previsível que satisfaça o requisito e escalar quando houver ganho mensurável — não eliminar IA por princípio.
+35. Capability é contrato; agente/modelo/função é executor.
+36. Health de capability pode ser técnico, cognitivo e econômico.
+37. O Orchestrator seleciona por requisito, schema, policy, scope, health, risco, custo, latência e evidência — não por familiaridade com implementações.
+38. Control Plane e Execution Plane permanecem conceitualmente separados.
+39. Capability não pode criar recursão ilimitada diretamente; ela propõe `NextStepCandidate`.
+40. Toda nova onda passa por Admission Control, budget e policy.
+41. Hard constraints filtram antes de ranking de candidatos.
+42. Fallback, retry, parallelism, replanning e escalation são decisões explícitas e rastreáveis.
+43. Delegar um subplan não delega autoridade ilimitada; scope, budget, risk limit, fan-out e deadline acompanham a delegação.
+44. Alto risco pode exigir IA/humano diretamente; deterministic-first não é dogma.
+45. IA supervisora é capability governada; sua saída continua Artifact/Evidence Candidate.
+46. O Orchestrator também possui health, métricas e precisa ser observável.
+47. Políticas de roteamento aprendidas entram em Learning Quarantine antes de promoção.
+48. O estado durável de planos/traces não deve depender da memória de um único processo.
 
 ## Processo de implementação
 
@@ -120,26 +135,52 @@ E6 — prova econômica
 
 Uma bateria local positiva não autoriza alegação E5/E6.
 
-## Aprendizado contínuo
+## Orchestration guardrails
 
-A arquitetura distingue pelo menos:
+Preferir o fluxo:
 
 ```text
-L1 — sessão/contexto
-L2 — individual/tenant/organização
-L3 — domínio
-L4 — global
+TaskRequirement
+      ↓
+Capability Registry Query
+      ↓
+Policy / Scope / Schema / Health Filter
+      ↓
+Admission Control
+      ↓
+OrchestrationPlan / Work Graph
+      ↓
+Budget Allocation
+      ↓
+Execution Plane
+      ↓
+Artifacts / Evidence / Metrics
+      ↓
+Stop / Replan / Escalate / Next Wave
 ```
 
-Quanto maior o alcance da mudança, maior a exigência de evidência, holdout, evaluator, baseline, aprovação, versionamento, monitoramento e rollback.
+Nunca permitir como padrão:
 
-Um agente nunca deve promover automaticamente padrão local para conhecimento global.
+```text
+CAP_A → chama CAP_B → chama CAP_C → ... sem controle
+```
+
+Preferir:
+
+```text
+CAP_A
+  ↓
+NextStepCandidate
+  ↓
+ORCHESTRATOR
+  ↓ policy + budget + admission
+  ↓
+CAP_B autorizado
+```
+
+Stop reasons, budget consumption, fallbacks, retries, circuit breakers, escalations e replans relevantes precisam aparecer no trace.
 
 ## Learning Quarantine
-
-Candidatos de aprendizagem podem ser produzidos pelo processamento, mas permanecem fora do Trusted Core até promoção.
-
-Preferir fronteira forte:
 
 ```text
 TRUSTED CORE ──eventos/snapshots permitidos──► LEARNING QUARANTINE
@@ -149,13 +190,9 @@ LEARNING QUARANTINE ──X──► escrita direta no TRUSTED CORE
 LEARNING QUARANTINE ──Promotion Gate──► nova versão promovida
 ```
 
-Em caso de erro promovido, preservar histórico e usar relações/estados como `revoked`, `superseded`, `invalidates`, `requires_recompute` quando apropriado. Não apagar a origem se ela for necessária para auditoria.
+Em caso de erro promovido, preservar histórico e usar estados/relações como `revoked`, `superseded`, `invalidates`, `requires_recompute` quando apropriado.
 
 ## Integridade e resiliência
-
-O Integrity & Resilience Plane deve ser tratado como responsabilidade transversal.
-
-Preferir fluxo:
 
 ```text
 DETECT
@@ -175,7 +212,7 @@ REPROCESS
 VERIFY
 ```
 
-Não “destruir” conteúdo original como resposta padrão a uma interpretação ruim. Preservar provenance e auditabilidade.
+Não “destruir” conteúdo original como resposta padrão a interpretação ruim.
 
 ## Política de mudanças
 
@@ -184,24 +221,25 @@ Registrar antes de alterar:
 - entidades fundamentais;
 - ontologia e relações;
 - formato de eventos;
+- Cognitive Kernel;
 - Atomic/Cognitive Envelope;
-- trust tiers / integrity states;
-- separação de memória;
+- trust/integrity states;
 - Evidence Model;
 - confiança/calibração;
 - política de aprendizagem;
-- Learning Quarantine e Promotion Gate;
-- Integrity & Resilience Plane;
+- Learning Quarantine / Promotion Gate;
+- Integrity & Resilience;
 - taint propagation / blast radius;
 - persistência;
-- limites da expansão/recursão;
+- limites de expansão/recursão;
 - API/SDK pública;
 - dependência estrutural de fornecedor externo;
-- Capability Registry / Health Registry / Schema Registry / Lens Registry;
+- Capability / Health / Schema / Lens Registries;
+- Orchestration Model / Work Graph / budget / admission / stop policy;
 - comportamento global aprendido;
 - Evaluation Plane;
 - políticas de escala, custo e orçamento cognitivo;
-- definição de métricas B2B usadas para alegar valor.
+- métricas B2B usadas para alegar valor.
 
 ## Qualidade mínima
 
@@ -217,23 +255,9 @@ Buscar:
 - métricas de latência, custo e qualidade;
 - schemas/migrações não destrutivas quando possível;
 - lineage suficiente para explicar resultados e propagar correções;
-- health signals para capabilities críticas;
-- observabilidade de fallback, escalonamento e custo;
+- health signals para capabilities e Orchestrator;
+- observabilidade de fallback, escalation, stop reasons e custo;
 - fault injection para caminhos críticos quando aplicável.
-
-## Linguagem e nomenclatura
-
-Identificadores internos universais devem ser neutros de idioma, por exemplo:
-
-```text
-ATOM_DECISION
-REL_CONTINUES
-CAP_ATOMIZATION
-LEARNING_CANDIDATE
-PROMOTION_GATE
-INTEGRITY_STATE
-ATOMIC_ENVELOPE
-```
 
 ## Regras finais
 
@@ -244,5 +268,7 @@ ATOMIC_ENVELOPE
 > **Aprendizado nasce em quarentena; confiança é conquistada por promoção.**
 
 > **Falha conhecida é preferível a sucesso aparente com peça crítica ausente.**
+
+> **A capability pode pedir para continuar; o Orchestrator decide se o organismo continua.**
 
 > **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
