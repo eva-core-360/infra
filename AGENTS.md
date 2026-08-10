@@ -10,15 +10,24 @@ Antes de trabalhar:
 2. `docs/blueprint/01_REGISTRO_DECISOES.md`
 3. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
 4. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
-5. documento específico da área em que será feita a alteração
+5. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
+6. documento específico da área em que será feita a alteração
 
 ## Regra de autoridade arquitetural
 
 O Blueprint vigente é a referência arquitetural. O agente não deve transformar preferência pessoal, conveniência momentânea ou sugestão automática em decisão estrutural sem registrar a proposta e sua justificativa.
 
+## Foco vigente
+
+O objeto principal de arquitetura é o **Eva Engine® como infraestrutura cognitiva generalista e potencial motor empresarial**.
+
+Protótipos de notas e resultados anteriores são **evidência experimental e laboratórios**, não o limite conceitual do projeto.
+
+Não reduzir discussões universais a “nota”, “área da vida”, “pasta” ou outra entidade de produto quando a capacidade puder ser expressa em termos de eventos, entidades, contexto, memória, relações, evidência, inferência, estado, política, schema ou capability.
+
 ## Regras não negociáveis da base atual
 
-1. O Eva Engine® é generalista; Eva Memory® é produto consumidor.
+1. O Eva Engine® é generalista; produtos são consumidores.
 2. Produtos dependem do Core; o Core não depende de produtos.
 3. Conteúdo original nunca é sobrescrito pela interpretação.
 4. RAW, DERIVED, INFERRED e LEARNED devem permanecer conceitualmente separados.
@@ -40,30 +49,56 @@ O Blueprint vigente é a referência arquitetural. O agente não deve transforma
 20. Evaluators e baselines são obrigatórios para afirmar que uma versão cognitiva melhorou.
 21. O Core não deve impor profundidade fixa de hierarquia específica de um produto.
 22. Novas capacidades devem ser descobríveis e versionáveis por Capability Registry quando essa infraestrutura estiver implementada.
+23. Resultados de protótipos anteriores são evidência, não arquitetura-alvo automática.
+24. Nenhum mecanismo deve ser chamado de “aprendizado”, “confiança”, “inteligência”, “escala” ou “economia” sem definição operacional testável.
+25. Escala operacional, escala cognitiva e escala de domínio devem ser tratadas como problemas distintos.
+26. Informação e resultados da fase privada de P&D não devem ser publicados ou enviados para fora do contexto autorizado sem decisão explícita.
 
 ## Processo de implementação
 
 Para cada capacidade nova:
 
 ```text
-IDEIA
+IDEIA / HIPOTESE
   ↓
-ESPECIFICAÇÃO
+DEFINICAO OPERACIONAL
   ↓
 CASOS DE TESTE
   ↓
-IMPLEMENTAÇÃO
+BASELINE
   ↓
-TESTES
+IMPLEMENTACAO
   ↓
-OBSERVAÇÃO
+TESTE ISOLADO
   ↓
-AVALIAÇÃO CONTRA BASELINE
+TESTE DE COMPOSICAO
   ↓
-AJUSTE / PROMOÇÃO / REJEIÇÃO
+TESTE DE ESCALA
+  ↓
+RED TEAM / HOLDOUT
+  ↓
+AVALIACAO CONTRA BASELINE
+  ↓
+AJUSTE / PROMOCAO / REJEICAO
 ```
 
 Não inverter para “gerar código e depois descobrir qual era a regra”.
+
+## Escada de evidência
+
+Usar como referência:
+
+```text
+E0 — ideia
+E1 — prova de mecanismo
+E2 — bateria reproduzível
+E3 — escala sintética
+E4 — piloto de domínio
+E5 — prova operacional
+E6 — prova econômica
+```
+
+Uma bateria local positiva não autoriza alegação E5/E6.
 
 ## Política de mudanças
 
@@ -91,7 +126,10 @@ Não inverter para “gerar código e depois descobrir qual era a regra”.
 - Capability Registry;
 - Schema Registry;
 - mudanças de hierarquia universal;
-- comportamento global aprendido.
+- comportamento global aprendido;
+- Evidence Model;
+- Evaluation Plane;
+- políticas de escala e orçamento cognitivo.
 
 ## Aprendizado contínuo
 
@@ -99,7 +137,7 @@ A arquitetura distingue pelo menos quatro níveis:
 
 ```text
 L1 — sessão/contexto
-L2 — individual/tenant
+L2 — individual/tenant/organização
 L3 — domínio
 L4 — global
 ```
@@ -139,7 +177,8 @@ Código novo deve buscar:
 - testes de regressão;
 - versionamento de regras relevantes;
 - métricas de latência, custo e qualidade quando aplicável;
-- compatibilidade de schema e migrações não destrutivas quando possível.
+- compatibilidade de schema e migrações não destrutivas quando possível;
+- lineage suficiente para explicar resultados relevantes.
 
 ## Linguagem e nomenclatura
 
@@ -160,3 +199,5 @@ Evitar conceitos universais nomeados apenas em português dentro do modelo canô
 > Se uma decisão tornar o primeiro protótipo mais rápido, mas impedir o Eva Engine® de permanecer generalista, ela deve ser isolada no Domain Pack ou no produto, não embutida no Core.
 
 > Se uma decisão parecer “mais inteligente”, mas não puder ser medida, rastreada e revertida, ela ainda não está pronta para promoção estrutural.
+
+> **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
