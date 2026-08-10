@@ -12,17 +12,25 @@ Antes de trabalhar:
 4. `docs/blueprint/26_EVIDENCE_MODEL_V0_1.md`
 5. `docs/blueprint/27_CAPABILITY_HEALTH_SCHEMA_REGISTRIES_V0_1.md`
 6. `docs/blueprint/28_ORCHESTRATION_MODEL_V0_1.md`
-7. `docs/blueprint/01_REGISTRO_DECISOES.md`
-8. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
-9. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
-10. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
-11. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
-12. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
-13. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
-14. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
-15. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
-16. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
-17. documento específico da área em que será feita a alteração
+7. `docs/blueprint/29_ATOMIC_COGNITIVE_ENVELOPE_V1_0.md`
+8. `docs/blueprint/30_INTEGRITY_RESILIENCE_PLANE_V0_1.md`
+9. `docs/blueprint/31_EVALUATION_PLANE_V0_1.md`
+10. `docs/blueprint/32_OBSERVABILITY_COGNITIVE_ECONOMICS_V0_1.md`
+11. `docs/blueprint/33_LEARNING_QUARANTINE_PROMOTION_UNLEARNING_V1_0.md`
+12. `docs/blueprint/34_ENTERPRISE_INTEGRATION_BOUNDARY_V0_1.md`
+13. `docs/blueprint/35_ENTERPRISE_COGNITIVE_THREAT_MODEL_V0_1.md`
+14. `docs/blueprint/36_EXECUTABLE_ARCHITECTURE_SPEC_V0_1.md`
+15. `docs/blueprint/01_REGISTRO_DECISOES.md`
+16. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
+17. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
+18. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
+19. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
+20. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
+21. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
+22. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
+23. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
+24. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
+25. documento específico da área em que será feita a alteração
 
 ## Autoridade arquitetural
 
@@ -33,6 +41,8 @@ O Blueprint vigente é a referência. Nenhum agente deve transformar preferênci
 O objeto principal é o **Eva Engine® como infraestrutura cognitiva generalista e potencial motor B2B enterprise**. Protótipos anteriores são laboratórios e evidência, não o limite conceitual do projeto.
 
 A barra de engenharia é enterprise: auditabilidade, isolamento, custo, governança, resiliência, observabilidade, segurança, recuperação e prova econômica devem ser consideradas desde o Blueprint, mesmo quando a primeira implementação executável for pequena.
+
+O projeto possui agora uma especificação de heartbeat executável em `36_EXECUTABLE_ARCHITECTURE_SPEC_V0_1.md`. Implementação deve seguir essa spec por fatias pequenas, sem reconstruir arquitetura no Cursor.
 
 ## Regras não negociáveis da base atual
 
@@ -84,6 +94,17 @@ A barra de engenharia é enterprise: auditabilidade, isolamento, custo, governan
 46. O Orchestrator também possui health, métricas e precisa ser observável.
 47. Políticas de roteamento aprendidas entram em Learning Quarantine antes de promoção.
 48. O estado durável de planos/traces não deve depender da memória de um único processo.
+49. Envelope e Payload são responsabilidades distintas; metadados pesados podem ficar por referência para controlar overhead.
+50. Controlled Unlearning precisa retirar autoridade de aprendizado errado sem apagar o histórico auditável.
+51. Promoção gera manifesto/versão; Trusted Core não sofre mutação silenciosa.
+52. Sistemas enterprise atravessam Enterprise Integration Boundary/Anti-Corruption Layer; não acessam Kernel diretamente.
+53. Tenant/scope é resolvido antes de admissão; não usar `default tenant` silencioso.
+54. Autenticidade da fonte não significa verdade; output de modelo também não ganha autoridade automática.
+55. Ações externas passam por `ActionRequest` + Policy/Permission + adapter autorizado.
+56. Threat Model inclui integridade cognitiva: evidence, learning, promotion, routing e cost amplification são superfícies de segurança.
+57. O primeiro heartbeat executável não depende de LLM/embeddings/UI; prova evento → envelope → registry → orchestration → capability determinística → artifact/evidence/trace → result.
+58. Antes de banco/API, contratos centrais devem ser testáveis com implementações in-memory e fixtures determinísticos.
+59. O primeiro heartbeat prova invariantes e failure containment antes de sofisticação cognitiva.
 
 ## Processo de implementação
 
@@ -190,7 +211,7 @@ LEARNING QUARANTINE ──X──► escrita direta no TRUSTED CORE
 LEARNING QUARANTINE ──Promotion Gate──► nova versão promovida
 ```
 
-Em caso de erro promovido, preservar histórico e usar estados/relações como `revoked`, `superseded`, `invalidates`, `requires_recompute` quando apropriado.
+Em caso de erro promovido, preservar histórico e usar estados/relações como `revoked`, `superseded`, `invalidates`, `requires_recompute` quando apropriado. Quando necessário, executar Controlled Unlearning por lineage/checkpoint/replay.
 
 ## Integridade e resiliência
 
@@ -214,6 +235,31 @@ VERIFY
 
 Não “destruir” conteúdo original como resposta padrão a interpretação ruim.
 
+## Primeira implementação executável
+
+Seguir `36_EXECUTABLE_ARCHITECTURE_SPEC_V0_1.md`.
+
+Primeira fatia no Cursor:
+
+```text
+packages/contracts
+packages/schemas
+packages/envelope
+```
+
+Primeiro critério:
+
+```text
+tests pass
+typecheck pass
+invalid envelope fails
+valid fixture round-trips without mutation
+no DB
+no HTTP
+no LLM
+no domain code
+```
+
 ## Política de mudanças
 
 Registrar antes de alterar:
@@ -227,9 +273,11 @@ Registrar antes de alterar:
 - Evidence Model;
 - confiança/calibração;
 - política de aprendizagem;
-- Learning Quarantine / Promotion Gate;
+- Learning Quarantine / Promotion / Unlearning;
 - Integrity & Resilience;
 - taint propagation / blast radius;
+- Enterprise Integration Boundary;
+- tenant/scope model;
 - persistência;
 - limites de expansão/recursão;
 - API/SDK pública;
@@ -238,6 +286,7 @@ Registrar antes de alterar:
 - Orchestration Model / Work Graph / budget / admission / stop policy;
 - comportamento global aprendido;
 - Evaluation Plane;
+- Threat Model;
 - políticas de escala, custo e orçamento cognitivo;
 - métricas B2B usadas para alegar valor.
 
@@ -257,7 +306,9 @@ Buscar:
 - lineage suficiente para explicar resultados e propagar correções;
 - health signals para capabilities e Orchestrator;
 - observabilidade de fallback, escalation, stop reasons e custo;
-- fault injection para caminhos críticos quando aplicável.
+- fault injection para caminhos críticos quando aplicável;
+- tenant/scope enforcement fora de prompts/modelos;
+- nenhuma credencial/secret no repositório.
 
 ## Regras finais
 
@@ -270,5 +321,7 @@ Buscar:
 > **Falha conhecida é preferível a sucesso aparente com peça crítica ausente.**
 
 > **A capability pode pedir para continuar; o Orchestrator decide se o organismo continua.**
+
+> **O primeiro coração não precisa pensar muito. Precisa bater certo.**
 
 > **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
