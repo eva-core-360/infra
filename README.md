@@ -1,48 +1,53 @@
 # Eva Engine® — Infra & Blueprint
 
-Este repositório é a fonte de verdade arquitetural do **Eva Engine®**, núcleo cognitivo generalista que dará origem a produtos próprios e poderá futuramente servir como infraestrutura e serviço para organizações de grande escala.
+Este repositório é a fonte privada de verdade arquitetural do **Eva Engine®**, uma infraestrutura cognitiva generalista projetada com horizonte **B2B enterprise**.
+
+O projeto não é um bloco de notas, um chatbot ou um wrapper de LLM. Protótipos anteriores são laboratórios e evidência experimental; não definem o teto conceitual do Core.
+
+---
 
 ## Regra de continuidade
 
-Antes de propor arquitetura, código ou decisões estruturais, qualquer pessoa ou agente deve ler, nesta ordem:
+Antes de propor arquitetura, código ou decisões estruturais, qualquer novo chat, agente ou desenvolvedor deve ler, nesta ordem:
 
 1. `docs/blueprint/00_BLUEPRINT_MESTRE.md`
 2. `docs/blueprint/24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md`
-3. `docs/blueprint/01_REGISTRO_DECISOES.md`
-4. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
-5. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
-6. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
-7. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
-8. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
-9. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
-10. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
-11. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
-12. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
-13. `AGENTS.md`
+3. `docs/blueprint/25_COGNITIVE_KERNEL_V0_1.md`
+4. `docs/blueprint/01_REGISTRO_DECISOES.md`
+5. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
+6. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
+7. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
+8. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
+9. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
+10. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
+11. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
+12. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
+13. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
+14. `AGENTS.md`
 
-Depois, consultar os documentos específicos da área em que irá trabalhar.
+Depois, consultar os documentos especializados da área em que irá trabalhar.
 
-O `00_BLUEPRINT_MESTRE.md` preserva a fundação canônica inicial; o `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md` é a **fotografia consolidada mais atual** após a virada para organismo cognitivo, explosão atômica recursiva, quarentena de aprendizado e foco B2B enterprise.
+O `00_BLUEPRINT_MESTRE.md` preserva a fundação inicial. O `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md` é a fotografia consolidada da arquitetura enterprise atual. O `25_COGNITIVE_KERNEL_V0_1.md` define o núcleo irredutível que deve permanecer pequeno e neutro enquanto o ecossistema cresce.
 
-## Princípio central
+---
 
-> Produtos dependem do Eva Engine®. O Eva Engine® não depende de nenhum produto consumidor.
+## Princípios centrais
 
-Protótipos anteriores são laboratórios e evidência; **não definem o teto conceitual do Core**.
-
-## Princípios de escala e evidência
+> **Produtos dependem do Eva Engine®. O Eva Engine® não depende de nenhum produto consumidor.**
 
 > **Nascer pequeno na implementação não significa nascer pequeno na arquitetura.**
 
 > **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
 
-O Eva Engine® deve crescer por composição: schemas, registries, Domain Packs, capabilities, providers, lentes, agentes, relações e mecanismos de aprendizagem devem ampliar o sistema sem exigir reconstrução do núcleo.
+> **Aprendizado nasce em quarentena; confiança é conquistada por promoção.**
 
-O projeto distingue ideia, prova de mecanismo, bateria reproduzível, escala sintética, piloto de domínio, prova operacional e prova econômica.
+> **O Kernel deve permanecer menor que o ecossistema que ele governa.**
+
+---
 
 ## Horizonte B2B enterprise
 
-O Blueprint usa **B2B enterprise** como barra de engenharia desde o início. O objetivo é investigar problemas corporativos em que empresas gastam muito para pensar, correlacionar, investigar e coordenar usando combinações de:
+O Blueprint usa B2B enterprise como barra de engenharia desde o início. O objetivo é investigar problemas corporativos em que organizações gastam muito para pensar, correlacionar, investigar, coordenar e operar usando combinações de:
 
 ```text
 LLMs
@@ -64,7 +69,64 @@ infraestrutura
 
 A tese não é eliminar IA. É decompor o trabalho e resolver cada camada com o mecanismo de menor custo e maior previsibilidade que satisfaça o requisito, escalando para IA potente ou humano quando isso produzir ganho mensurável.
 
-Nenhuma alegação externa de economia, escala ou ROI será feita antes da evidência correspondente.
+Nenhuma alegação externa de economia, escala, superioridade ou ROI será feita antes da evidência correspondente.
+
+---
+
+## Mapa arquitetural resumido
+
+```text
+ENTERPRISE ENVIRONMENT
+ERP · CRM · logs · docs · finance · support · APIs · sensors · humans
+          │
+          ▼
+BOUNDARY / INGESTION
+schema · auth · scope · provenance · validation · normalization
+          │
+          ▼
+ATOMIC / COGNITIVE ENVELOPE
+identity · lineage · trust · integrity · policy · version
+          │
+          ▼
+╔══════════════════════════════════════════════════════════════╗
+║                 TRUSTED COGNITIVE FABRIC                   ║
+║                                                            ║
+║   Cognitive Kernel                                         ║
+║       │                                                    ║
+║   Orchestrator → Context → Lens Router → Specialists       ║
+║                                  │                         ║
+║                              Crossing                      ║
+║                                  │                         ║
+║                  Atoms · Relations · Signals               ║
+║                                  │                         ║
+║                              Inference                     ║
+║                                  │                         ║
+║                    Challenger · Evidence                   ║
+║                                  │                         ║
+║                        Evaluator · Policy                  ║
+║                                  │                         ║
+║                Result + Cognitive Derivatives              ║
+║                                  │                         ║
+║                              New Wave ↺                    ║
+╚══════════════════════════════════════════════════════════════╝
+          │                         │
+          ▼                         ▼
+      CONSUMER              LEARNING CANDIDATES
+                                    │
+                                    ▼
+                           LEARNING QUARANTINE
+                                    │
+                              Promotion Gate
+                                    │
+                                    ▼
+                         promoted/versioned state
+
+Integrity & Resilience observa o caminho inteiro.
+Supervisory AI / Human Authority entra por escalonamento quando justificado.
+Observability & Economics mede qualidade, latência, custo e taxa de escalonamento.
+```
+
+---
 
 ## Blueprint atual
 
@@ -98,89 +160,56 @@ infra/
         ├── 21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md
         ├── 22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md
         ├── 23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md
-        └── 24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md
+        ├── 24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md
+        └── 25_COGNITIVE_KERNEL_V0_1.md
 ```
 
-## Evidência e conceitos preservados
+---
 
-- `16_...` registra achados de uma bateria anterior com 508 cenários como **evidência histórica**, não como arquitetura-alvo.
-- `18_...` propõe as fichas cognitivas privadas como **Lentes Cognitivas componíveis**.
-- `19_...` formaliza o **360** como Core central cercado por órbita extensível de lentes, agentes, guards, challengers, evaluators e policies.
-- `20_...` formaliza a **Explosão Atômica Recursiva em ondas** e o escalonamento progressivo de mecânica para IA supervisora.
-- `21_...` cria o **Learning Quarantine Plane**: candidatos de aprendizagem e derivados experimentais ficam fora do Trusted Core; só atravessam por Promotion Gate após avaliação, versionamento e possibilidade de recuperação/rollback.
-- `22_...` formaliza o motor como **organismo cognitivo de responsabilidades especializadas**, com Atomic Envelope, Integrity & Resilience Plane, health, watchdogs, quarantine, recuperação e detecção de peças ausentes/degradadas.
-- `23_...` registra o foco **B2B enterprise**, a pilha de dores corporativas e a tese econômica de IA seletiva, auditável e proporcional ao valor produzido.
-- `24_...` consolida a arquitetura vigente em um **Mapa Mestre Enterprise v0.2**, ligando ingestão, envelope atômico, Cognitive Fabric, lenses, specialists, challenger, evaluation, quarantine, supervision, resiliência, observabilidade e economia.
+## Páginas estruturais recentes
+
+- `16_...` — evidência histórica de uma bateria anterior com 508 cenários.
+- `18_...` — Lentes Cognitivas componíveis.
+- `19_...` — arquitetura 360 orbital e hierarquia de agentes/guards.
+- `20_...` — Explosão Atômica Recursiva em ondas e escalonamento seletivo de IA.
+- `21_...` — Learning Quarantine, Promotion Gate e recuperação de erro.
+- `22_...` — organismo cognitivo, Atomic Envelope, integridade e resiliência.
+- `23_...` — foco B2B enterprise, dores e tese econômica.
+- `24_...` — Mapa Mestre Enterprise v0.2.
+- `25_...` — Cognitive Kernel v0.1, seus contratos universais e teste de pureza.
+
+---
 
 ## Foco vigente
 
-O foco atual é o **Eva Engine® como infraestrutura cognitiva generalista e potencial motor empresarial**, não a experiência de um produto específico.
-
-A engenharia deve distinguir:
-
-- escala operacional;
-- escala cognitiva;
-- escala de domínio;
-- integridade e resiliência;
-- custo e prova econômica.
-
-Fluxo conceitual em evolução:
+As próximas frentes centrais são:
 
 ```text
-EVENT / INPUT
-   ↓
-Atomic Envelope
-   ↓
-Ingress Guards
-   ↓
-Trusted Cognitive Fabric
-   ↓
-Context · Lenses · Specialists
-   ↓
-Crossing · Inference
-   ↓
-Challenger · Evaluator · Policy
-   ↓
-Result
-   ├──────────────► consumer
-   └──────────────► cognitive derivatives
-                         ↓
-                     new wave
-                         ↓
-                 learning candidates
-                         ↓
-                 Learning Quarantine
-                         ↓
-                   Promotion Gate
-                         ↓
-               promoted/versioned state
-
-Integrity & Resilience Plane observes the whole path
-and can isolate, degrade, alert, recover or escalate.
+Cognitive Kernel v0.1
+        ↓
+Atomic / Cognitive Envelope final
+        ↓
+Evidence Model
+        ↓
+Capability + Health + Schema Registries
+        ↓
+Orchestration Model
+        ↓
+Integrity & Resilience
+        ↓
+Learning Quarantine / Promotion
+        ↓
+Evaluation Plane
+        ↓
+Observability + Economics
+        ↓
+Enterprise Integration
+        ↓
+Threat Model / Fault Injection
+        ↓
+primeiro piloto B2B E4
 ```
 
-Próximas frentes centrais:
-
-- Cognitive Kernel e invariantes universais;
-- Atomic/Cognitive Envelope final;
-- Evidence Model;
-- Evaluation Plane e baselines;
-- Integrity & Resilience Plane;
-- Cognitive Lens Registry / Lens Stacks;
-- agentes/guards determinísticos, heurísticos e opcionais por modelo;
-- Challenger/Critic;
-- `Cognitive Derivative`, `Learning Candidate` e `Wave`;
-- métricas de novidade, ganho de informação e valor marginal;
-- Supervisory AI Plane e critérios de escalonamento;
-- Learning Quarantine, Promotion Gate, Shadow Mode e Recovery Protocol;
-- Capability Registry, Health Registry e Schema Registry;
-- lineage, taint propagation, blast radius e versionamento cognitivo;
-- observabilidade, cost-per-event e AI escalation rate;
-- datasets, red team, fault injection, testes de escala e pilotos enterprise;
-- seleção do primeiro problema B2B E4 com baseline operacional e econômico.
-
-## Fase privada de P&D
-
-Na fase atual, documentação, datasets, intenção experimental e resultados permanecem privados no repositório autorizado salvo decisão explícita de divulgação.
+O projeto permanece em fase privada de P&D. Documentação, datasets, intenção experimental e resultados permanecem no repositório/contextos autorizados salvo decisão explícita de divulgação.
 
 O Blueprint é vivo: decisões podem evoluir, mas mudanças estruturais devem ser registradas, avaliadas e versionadas.
