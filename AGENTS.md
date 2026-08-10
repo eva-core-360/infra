@@ -15,7 +15,9 @@ Antes de trabalhar:
 7. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
 8. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
 9. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
-10. documento específico da área em que será feita a alteração
+10. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
+11. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
+12. documento específico da área em que será feita a alteração
 
 ## Autoridade arquitetural
 
@@ -23,7 +25,9 @@ O Blueprint vigente é a referência. Nenhum agente deve transformar preferênci
 
 ## Foco vigente
 
-O objeto principal é o **Eva Engine® como infraestrutura cognitiva generalista e potencial motor empresarial**. Protótipos anteriores são laboratórios e evidência, não o limite conceitual do projeto.
+O objeto principal é o **Eva Engine® como infraestrutura cognitiva generalista e potencial motor B2B enterprise**. Protótipos anteriores são laboratórios e evidência, não o limite conceitual do projeto.
+
+A barra de engenharia é enterprise: auditabilidade, isolamento, custo, governança, resiliência, observabilidade, segurança, recuperação e prova econômica devem ser considerados desde o Blueprint, mesmo quando a primeira implementação executável for pequena.
 
 ## Regras não negociáveis da base atual
 
@@ -58,6 +62,13 @@ O objeto principal é o **Eva Engine® como infraestrutura cognitiva generalista
 29. **Toda capacidade promovida relevante precisa ter caminho de revogação, correção ou rollback.**
 30. **Derivados recursivos precisam preservar lineage suficiente para localizar ancestralidade e calcular blast radius de um erro.**
 31. IA supervisora é permitida e esperada quando agrega valor; não deve ser chamada onde um mecanismo mais simples resolve com qualidade equivalente ou superior.
+32. **Átomos e derivados relevantes devem circular com Atomic/Cognitive Envelope suficiente para provenance, scope, lineage, integrity e policy.**
+33. **Integrity & Resilience Plane deve detectar degradação, anomalia, ausência de capability crítica e risco de propagação antes que falhas silenciosas contaminem o resultado.**
+34. **Falha conhecida é preferível a sucesso aparente produzido com uma peça crítica ausente.**
+35. Auto-recuperação só pode alterar automaticamente estados e componentes cuja recuperação seja segura, idempotente ou explicitamente testada.
+36. **B2B enterprise é o horizonte estratégico vigente; o motor deve medir custo, escalonamento para IA/humano e impacto operacional desde que aplicável.**
+37. Nenhuma alegação de economia, ROI ou superioridade empresarial pode ser feita sem baseline e nível de evidência correspondente.
+38. A tese econômica é usar o mecanismo mais barato/previsível que satisfaça o requisito e escalar para IA potente quando houver ganho mensurável — não eliminar IA por princípio.
 
 ## Processo de implementação
 
@@ -79,6 +90,8 @@ TESTE DE COMPOSIÇÃO
 TESTE DE ESCALA
   ↓
 RED TEAM / HOLDOUT
+  ↓
+FAULT INJECTION quando aplicável
   ↓
 SHADOW MODE quando aplicável
   ↓
@@ -138,6 +151,32 @@ LEARNING QUARANTINE ──Promotion Gate──► nova versão promovida
 
 Em caso de erro promovido, preservar histórico e usar relações/estados como `revoked`, `superseded`, `invalidates`, `requires_recompute` quando apropriado. Não apagar a origem se ela for necessária para auditoria.
 
+## Integridade e resiliência
+
+O Integrity & Resilience Plane deve ser tratado como responsabilidade transversal.
+
+Preferir fluxo:
+
+```text
+DETECT
+  ↓
+ISOLATE
+  ↓
+QUARANTINE
+  ↓
+TRACE LINEAGE
+  ↓
+ASSESS BLAST RADIUS
+  ↓
+REVOKE / SUPERSEDE / MARK TAINTED
+  ↓
+REPROCESS
+  ↓
+VERIFY
+```
+
+Não “destruir” conteúdo original como resposta padrão a uma interpretação ruim. Preservar provenance e auditabilidade.
+
 ## Política de mudanças
 
 Registrar antes de alterar:
@@ -145,19 +184,24 @@ Registrar antes de alterar:
 - entidades fundamentais;
 - ontologia e relações;
 - formato de eventos;
+- Atomic/Cognitive Envelope;
+- trust tiers / integrity states;
 - separação de memória;
 - Evidence Model;
 - confiança/calibração;
 - política de aprendizagem;
 - Learning Quarantine e Promotion Gate;
+- Integrity & Resilience Plane;
+- taint propagation / blast radius;
 - persistência;
 - limites da expansão/recursão;
 - API/SDK pública;
 - dependência estrutural de fornecedor externo;
-- Capability Registry / Schema Registry / Lens Registry;
+- Capability Registry / Health Registry / Schema Registry / Lens Registry;
 - comportamento global aprendido;
 - Evaluation Plane;
-- políticas de escala, custo e orçamento cognitivo.
+- políticas de escala, custo e orçamento cognitivo;
+- definição de métricas B2B usadas para alegar valor.
 
 ## Qualidade mínima
 
@@ -172,7 +216,10 @@ Buscar:
 - versionamento de regras;
 - métricas de latência, custo e qualidade;
 - schemas/migrações não destrutivas quando possível;
-- lineage suficiente para explicar resultados e propagar correções.
+- lineage suficiente para explicar resultados e propagar correções;
+- health signals para capabilities críticas;
+- observabilidade de fallback, escalonamento e custo;
+- fault injection para caminhos críticos quando aplicável.
 
 ## Linguagem e nomenclatura
 
@@ -184,6 +231,8 @@ REL_CONTINUES
 CAP_ATOMIZATION
 LEARNING_CANDIDATE
 PROMOTION_GATE
+INTEGRITY_STATE
+ATOMIC_ENVELOPE
 ```
 
 ## Regras finais
@@ -193,5 +242,7 @@ PROMOTION_GATE
 > Se algo parece mais inteligente mas não pode ser medido, rastreado e revertido, ainda não está pronto para promoção.
 
 > **Aprendizado nasce em quarentena; confiança é conquistada por promoção.**
+
+> **Falha conhecida é preferível a sucesso aparente com peça crítica ausente.**
 
 > **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
