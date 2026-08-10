@@ -6,35 +6,31 @@
 
 # 1. Estado atual do projeto
 
-O projeto está na fase de **Blueprint arquitetural detalhado**, antes da implementação principal do novo Core.
+O projeto saiu da fase de Blueprint puramente conceitual e atingiu uma **base arquitetural suficiente para iniciar o primeiro heartbeat executável**, ainda em P&D privado.
 
-A intenção é construir uma especificação suficientemente clara para que Cursor/agentes possam programar por módulos com testes, sem inventar arquitetura durante a implementação.
+O repositório `eva-core-360/infra` permanece a fonte persistente de verdade arquitetural.
 
-O repositório `eva-core-360/infra` é a fonte persistente de verdade do Blueprint.
+**Foco vigente:** Eva Engine® como infraestrutura cognitiva generalista B2B enterprise, orientada a eventos, com execução confiável, evidência, orquestração, aprendizagem isolada, resiliência, avaliação, observabilidade, economia cognitiva e segurança cognitiva.
 
-**Foco vigente:** Eva Engine® como infraestrutura cognitiva generalista, extensível, mensurável, supervisionada e potencialmente utilizável em produtos e operações empresariais de grande escala.
+O primeiro runtime ainda não foi iniciado. A especificação executável está em:
+
+`36_EXECUTABLE_ARCHITECTURE_SPEC_V0_1.md`
+
+Questão imediata em aberto: confirmar se o runtime viverá em repositório privado separado, com preferência atual por algo como:
+
+```text
+eva-core-360/engine
+```
 
 ---
 
-# 2. Origem conceitual — importante, mas não limitante
+# 2. Origem — laboratório, não teto
 
-A discussão começou a partir de mecanismos de um produto de anotações e memória pessoal.
+A origem prática veio de mecanismos testados em um produto de notas/memória.
 
-Foram exploradas ideias como:
+Isso forneceu evidência de que combinações pequenas, especialmente determinísticas, podem gerar comportamento útil.
 
-- pessoa no centro (“EU”);
-- áreas da vida;
-- continuidade;
-- retomada;
-- associação;
-- gravidade/proximidade cognitiva;
-- funcionamento principalmente determinístico e heurístico sem IA generativa ativa permanente.
-
-Esses mecanismos serviram como primeiro laboratório para testar se regras pequenas, combinadas, poderiam produzir comportamento útil e percebido como inteligente.
-
-**A origem em notas não define o novo Core.**
-
-O protótipo de notas deve ser tratado como:
+O produto anterior é tratado como:
 
 ```text
 LABORATORIO
@@ -44,428 +40,641 @@ EVIDENCIA HISTORICA
 FONTE DE CASOS DE TESTE
 ```
 
-não como arquitetura-alvo universal.
+não como arquitetura-alvo.
+
+A bateria histórica com 508 cenários está resumida em:
+
+`16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md`
+
+Lição central:
+
+> mecanismos simples podem produzir muito valor; heurísticas sem avaliação podem amplificar erro.
 
 ---
 
-# 3. Virada fundamental
+# 3. Definição atual do Eva Engine®
 
-A arquitetura deixou de ser pensada como “motor de notas”.
+Não é:
 
-A decisão central passou a ser:
+- bloco de notas;
+- chatbot;
+- wrapper de LLM;
+- único agente;
+- banco com automações;
+- sistema que aprende diretamente em produção.
 
-> **Eva Engine® = Core generalista.**
-
-> **Produtos = consumidores do motor.**
+É um **Cognitive Runtime / Cognitive Fabric** generalista.
 
 Princípio:
 
 > **Produtos dependem do Eva Engine®. O Eva Engine® não depende de nenhum produto consumidor.**
 
-Essa continua sendo uma das decisões arquiteturais mais importantes do projeto.
+---
+
+# 4. Horizonte B2B enterprise
+
+O público-alvo estratégico é enterprise.
+
+Dores investigadas:
+
+```text
+LLMs
++
+agentes
++
+consultorias
++
+analistas
++
+processamento
++
+retrabalho
++
+investigação manual
++
+infraestrutura
+```
+
+A tese econômica é decompor trabalho cognitivo e usar o mecanismo mais barato/previsível que satisfaça o requisito, escalando para IA potente ou humano quando houver ganho mensurável.
+
+Nenhuma economia ou ROI é afirmada antes de prova correspondente.
+
+Escada de evidência:
+
+```text
+E0 ideia
+E1 prova de mecanismo
+E2 bateria reproduzível
+E3 escala sintética
+E4 piloto de domínio
+E5 prova operacional
+E6 prova econômica
+```
 
 ---
 
-# 4. Nova ampliação de foco: motor empresarial
+# 5. Arquitetura 360
 
-A ambição foi explicitamente elevada.
+O conceito 360 evoluiu para um Core estável cercado por órbita extensível de lentes, capabilities, agentes, guards, evaluators, policies e supervisores.
 
-O Blueprint deve ser grande o suficiente para permitir que o Eva Engine® futuramente:
+```text
+                  ORBITA COGNITIVA
+        lens · guard · specialist · evaluator
+                    ╲    │    ╱
+                     [ CORE ]
+                    ╱    │    ╲
+        policy · challenger · registry · agent
+```
 
-- sirva múltiplos produtos;
-- opere em múltiplos domínios;
-- receba eventos de sistemas diferentes;
-- mantenha memória e contexto;
-- relacione informação;
-- aprenda continuamente sob supervisão;
-- seja testável e auditável;
-- seja implantável em cenários empresariais sérios;
-- possa gerar impacto econômico quando isso for demonstrado em pilotos reais.
+O Core não precisa crescer proporcionalmente ao número de capacidades.
 
-O projeto **não afirma hoje** que já atende grandes empresas ou economiza milhões. Essa é direção estratégica e hipótese de valor, a ser conquistada por evidência.
+Ele precisa saber:
 
-Regra:
-
-> **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
-
----
-
-# 5. Três naturezas lógicas do motor
-
-Desde o início foram escolhidas três naturezas de raciocínio que podem coexistir:
-
-## Determinístico
-
-Usado quando regras, parsing, validação, contexto conhecido ou cálculo explícito podem produzir comportamento previsível.
-
-## Heurístico
-
-Usa sinais e aproximações quando não existe certeza absoluta. Deve trabalhar com limites, evidência e incerteza.
-
-## Preditivo
-
-Usa histórico e padrões para estimar tendência futura sem transformar previsão em verdade.
-
-A bateria anterior reforçou que mecanismos determinísticos podem produzir muito valor e que heurísticas precisam ser cuidadosamente calibradas e avaliadas.
+```text
+registrar
+descobrir
+selecionar
+autorizar
+orquestrar
+limitar
+avaliar
+versionar
+revogar
+```
 
 ---
 
-# 6. Bateria experimental anterior
+# 6. Organismo cognitivo
 
-Foi realizado um laboratório com 508 cenários sobre mecanismos locais de um protótipo anterior.
+Metáfora vigente:
 
-Os resultados detalhados estão registrados em:
+```text
+organismo                = Cognitive Fabric
+núcleo                    = Trusted Execution Core / Cognitive Kernel
+célula                    = Capability / Guard / Specialist
+membrana                  = Integration Boundary / Policy Gate
+sistema imunológico       = Integrity & Resilience Plane
+circulação                = Event & Artifact Flow
+mutação candidata         = Learning Candidate
+homeostase                = Operational Stability
+```
 
-`16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md`
-
-Lições principais:
-
-- continuidade/retomada e busca local mostraram sinais fortes;
-- mecanismos simples podem compor valor real;
-- heurísticas de associação/classificação podem errar com confiança indevida;
-- algumas abordagens degradaram com escala;
-- recalcular estatística não é aprendizado contínuo real;
-- explicabilidade e silêncio importam;
-- teste pequeno positivo é justificativa para investigar, não prova empresarial.
-
-Esse laboratório é evidência, não destino.
+A metáfora é arquitetural, não alegação neurocientífica.
 
 ---
 
-# 7. Aprendizado contínuo — definição vigente
+# 7. Cognitive Kernel
+
+Documento:
+
+`25_COGNITIVE_KERNEL_V0_1.md`
+
+O Kernel é mínimo e neutro.
+
+Conhece:
+
+```text
+identity
+scope
+envelopes
+events
+state transitions
+lineage
+policy gates
+capability invocation
+budgets
+traces
+versions
+integrity
+```
+
+Não conhece notas, domínios, idiomas, LLMs ou fornecedores específicos.
 
 Princípio:
 
-> **Usar a Eva pode ensinar a Eva, mas promover o que foi aprendido exige governança.**
+> **O Kernel deve permanecer menor que o ecossistema que governa.**
 
-A arquitetura distingue pelo menos:
+---
+
+# 8. Atomic / Cognitive Envelope
+
+Documento:
+
+`29_ATOMIC_COGNITIVE_ENVELOPE_V1_0.md`
+
+Todo artefato relevante circula com identidade, scope, lineage, trust, integrity, versão e policy suficientes.
+
+Separação:
 
 ```text
-L1 — aprendizado de sessão/contexto
-L2 — aprendizado individual/tenant/organização
-L3 — aprendizado de domínio
-L4 — aprendizado global
+ENVELOPE
+controle / identidade / governança
+
+PAYLOAD
+conteúdo semântico
 ```
 
-Quanto maior o alcance, maior a necessidade de:
-
-- evidência;
-- evaluator;
-- baseline;
-- versionamento;
-- aprovação;
-- monitoramento;
-- rollback.
-
-Aprendizado não significa simplesmente que os dados mudaram. Deve existir alteração mensurável de comportamento ou parâmetros em função de evidência/feedback.
+Metadados pesados podem ser referenciados para evitar overhead excessivo.
 
 ---
 
-# 8. Crescimento exponencial — significado técnico
+# 9. Evidence Model
 
-“Crescimento exponencial” não significa custo ou processamento descontrolado.
+Documento:
 
-Significa **crescimento por composição**:
+`26_EVIDENCE_MODEL_V0_1.md`
+
+Conceitos distintos:
 
 ```text
-novo idioma
-+
-Core existente
-+
-ontologia
-+
-contexto
-+
-aprendizado
-=
-mais capacidades em vários produtos
+SIGNAL
+EVIDENCE
+CLAIM
+HYPOTHESIS
+SCORE
+CONFIDENCE
+DECISION
 ```
 
-ou:
+Regra central:
+
+> **Score não é Confidence.**
+
+Outro princípio:
+
+> **novo derivado não significa nova evidência independente.**
+
+Lineage e independence groups protegem contra Evidence Echo.
+
+---
+
+# 10. Cognitive Lenses
+
+Documentos:
+
+`18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
+
+`19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
+
+Lentes são formas de observar, não necessariamente executores.
 
 ```text
-novo Domain Pack
-+
-Event Engine
-+
-Memory Engine
-+
-Relation Engine
-=
-novo domínio sem reconstruir o Core
+LENS
+como observar
+
+CAPABILITY
+o que o sistema sabe fazer
+
+AGENT / MECHANISM
+quem/como executa
 ```
 
-Documentação central: `15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`.
+O acervo histórico de 32 lentes é fonte de arquitetura e futuras composições; não é lista fixa do Core.
+
+Existe pista histórica de redução/hierarquia `32 → 12 → 8`, ainda não reconstruída de forma confiável.
 
 ---
 
-# 9. Três escalas que não devem ser confundidas
+# 11. Registries
 
-## Escala operacional
+Documento:
 
-Volume de eventos, dados, tenants, concorrência, memória e processamento.
-
-## Escala cognitiva
-
-Quantidade/complexidade de contextos, relações, hipóteses, padrões e aprendizagem.
-
-## Escala de domínio
-
-Quantidade/diversidade de setores, produtos, ontologias e políticas especializadas.
-
-Sucesso em uma dimensão não comprova as outras.
-
----
-
-# 10. Engenharia em camadas — direção vigente
-
-O Blueprint passa a investigar o motor como uma cadeia de responsabilidades:
+`27_CAPABILITY_HEALTH_SCHEMA_REGISTRIES_V0_1.md`
 
 ```text
-EVENTOS / DADOS
-      ↓
-SUBSTRATO DETERMINISTICO
-      ↓
-SINAIS
-      ↓
-REPRESENTACAO ESTRUTURADA
-      ↓
-CONTEXTO
-      ↓
-RECUPERACAO / MEMORIA
-      ↓
-RELACOES
-      ↓
-INFERENCIA
-      ↓
-APRENDIZADO
-      ↓
-EVALUATION PLANE
-      ↓
-ORQUESTRACAO / ORCAMENTO
-      ↓
-GOVERNANCA
-      ↓
-CAPABILITIES / INTEGRACOES
+SCHEMA REGISTRY
+que estrutura é esta?
+
+CAPABILITY REGISTRY
+quem sabe fazer o quê?
+
+HEALTH REGISTRY
+quem está apto a fazer agora?
 ```
 
-Cada camada deve poder ser testada isoladamente e em composição.
-
-Documento principal desta mudança: `17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`.
-
----
-
-# 11. Ontologia universal
-
-O Core não deve conhecer antecipadamente todas as áreas humanas ou empresariais.
-
-Ele deve conhecer abstrações universais e meios de extensão:
+Health possui dimensões:
 
 ```text
-Event
-Entity
-Atom
-Relation
-Context
-State
-Time
-Evidence
-Inference
-Feedback
-Memory
-Policy
-Capability
-Schema
+technical
+cognitive
+economic
 ```
 
-Áreas da vida, categorias empresariais, especialidades médicas, departamentos ou tipos de contrato pertencem a Domain Packs/Schemas quando específicos.
+Capability é contrato; agente/modelo/função é executor.
 
 ---
 
-# 12. “Infinita por dentro”
+# 12. Orchestration
 
-A visão não é manter uma lista infinita de categorias no Core.
+Documento:
 
-É permitir hierarquias e relações extensíveis:
+`28_ORCHESTRATION_MODEL_V0_1.md`
+
+Separação:
 
 ```text
-DOMAIN
-  └── CONTEXT
-       └── SUBCONTEXT
-            └── SUBJECT
-                 └── ENTITY / EVENT / ATOM
-                      └── RELATIONS
+CONTROL PLANE
+planeja · seleciona · autoriza · limita · replaneja
+
+EXECUTION PLANE
+executa capabilities · produz artifacts/evidence/metrics
 ```
 
-Essa profundidade não é rígida e pode variar por domínio.
+Regra central:
+
+> **A capability pode pedir para continuar; o Orchestrator decide se o organismo continua.**
+
+Capabilities propõem `NextStepCandidate`; nova onda exige Admission Control + budget + policy.
 
 ---
 
-# 13. Multilíngue desde a arquitetura
+# 13. Explosão Atômica Recursiva
 
-O Core não deve nascer em português para depois ser traduzido.
+Documento:
 
-Language Packs convertem expressões de diferentes idiomas para conceitos internos neutros, por exemplo:
+`20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
+
+A resposta pode gerar derivados; derivados podem alimentar nova onda.
 
 ```text
-ATOM_DECISION
-ATOM_INTENTION
-REL_CONTINUES
+WAVE 0 original
+WAVE 1 derivados primários
+WAVE 2 relações/contexto
+WAVE 3 hipóteses
+WAVE 4 contraprovas
+...
+STOP
 ```
 
-Adicionar idioma não deve exigir reconstruir a ontologia central.
-
----
-
-# 14. Expansão Cognitiva Controlada
-
-A ideia antiga de “explosão atômica” evoluiu para Expansão Cognitiva Controlada.
-
-Um evento pode gerar átomos, ativar contexto, recuperar memória, criar relações candidatas e produzir inferências.
-
-Mas todo ciclo precisa de orçamento:
-
-- profundidade;
-- candidatos;
-- átomos;
-- relações;
-- confiança mínima;
-- tempo;
-- custo;
-- memória;
-- prioridade;
-- escopo de privacidade.
-
-O motor deve aprender também quando **não** expandir.
-
----
-
-# 15. Evaluation Plane
-
-Evaluators são parte da arquitetura.
-
-Nenhuma mudança é “melhoria” apenas porque parece mais inteligente.
-
-Capacidades devem ser comparadas contra baseline com métricas adequadas, como:
-
-- precision;
-- recall;
-- F1;
-- calibration;
-- false positive/negative rate;
-- top-k;
-- cobertura;
-- qualidade de silêncio;
-- latência;
-- custo;
-- estabilidade;
-- regressão;
-- drift;
-- impacto operacional/econômico quando houver piloto real.
-
----
-
-# 16. Escada de evidência
-
-O projeto agora distingue:
+Toda expansão possui limites de:
 
 ```text
-E0 — ideia
-E1 — prova de mecanismo
-E2 — bateria reproduzível
-E3 — escala sintética
-E4 — piloto de domínio
-E5 — prova operacional
-E6 — prova econômica
+fan-out
+waves
+depth
+cost
+time
+risk
+novelty / information gain
 ```
 
-A arquitetura pode nascer com ambição E6; nenhuma capacidade ganha esse status sem conquistar os degraus.
+---
+
+# 14. Integrity & Resilience
+
+Documento:
+
+`30_INTEGRITY_RESILIENCE_PLANE_V0_1.md`
+
+Fluxo:
+
+```text
+DETECT
+  ↓
+CLASSIFY
+  ↓
+CONTAIN
+  ↓
+ISOLATE / DEGRADE / QUARANTINE
+  ↓
+TRACE LINEAGE
+  ↓
+BLAST RADIUS
+  ↓
+RECOVER
+  ↓
+VERIFY
+```
+
+Princípio:
+
+> **O organismo pode tolerar falhas de peças; não pode tolerar perda silenciosa de integridade.**
 
 ---
 
-# 17. Fase privada de P&D
+# 15. Learning Quarantine + Controlled Unlearning
 
-Na fase atual:
+Documento vigente consolidado:
 
-- documentação técnica permanece no repositório privado autorizado;
-- datasets e resultados de teste permanecem privados salvo decisão explícita;
-- intenção de teste não é publicada automaticamente;
-- protótipos de produto não precisam ser expostos para especificar o Core;
-- resultados internos não devem virar alegações públicas sem revisão.
+`33_LEARNING_QUARANTINE_PROMOTION_UNLEARNING_V1_0.md`
+
+O segundo círculo é uma trust boundary.
+
+```text
+TRUSTED EXECUTION
+      ↓ sinais autorizados
+LEARNING QUARANTINE
+      ↓ evaluation/challenge
+PROMOTION GATE
+      ↓
+PROMOTED VERSION
+```
+
+Learning Candidate nunca escreve diretamente no Core.
+
+Promoção gera manifesto/versionamento.
+
+Se algo promovido estiver errado:
+
+```text
+revoke authority
+→ trace lineage
+→ blast radius
+→ recompute
+→ evaluate
+→ corrected version
+```
+
+Princípio:
+
+> **Desaprender não é apagar o passado. É retirar do passado errado o poder de continuar moldando o futuro.**
 
 ---
 
-# 18. Stack atual
+# 16. Evaluation Plane
 
-Direção inicial:
+Documento:
 
-- Cursor para programação assistida;
-- GitHub para fonte de verdade e versionamento;
-- TypeScript como linguagem principal;
+`31_EVALUATION_PLANE_V0_1.md`
+
+Avalia:
+
+```text
+capability
+composition
+system
+```
+
+Usa baselines, golden, holdout, adversarial, shadow, canary, calibration, ablation, cost/latency e hard safety gates.
+
+Não existe “Eva Score” único que possa esconder regressão crítica em média agregada.
+
+---
+
+# 17. Observability & Cognitive Economics
+
+Documento:
+
+`32_OBSERVABILITY_COGNITIVE_ECONOMICS_V0_1.md`
+
+Mede:
+
+```text
+quality
+latency
+cost
+capability path
+AI escalation
+human escalation
+wave count
+stop reason
+marginal cognitive value
+```
+
+Objetivo B2B:
+
+> saber quanto custou pensar e se o ganho justificou o trabalho.
+
+---
+
+# 18. Enterprise Integration Boundary
+
+Documento:
+
+`34_ENTERPRISE_INTEGRATION_BOUNDARY_V0_1.md`
+
+Sistemas externos não acessam o Kernel diretamente.
+
+```text
+ERP / CRM / logs / APIs / sensors
+        ↓
+ADAPTER
+        ↓
+ANTI-CORRUPTION / INTEGRATION BOUNDARY
+        ↓
+CANONICAL EVENT
+        ↓
+COGNITIVE ENVELOPE
+```
+
+Tenant/scope é resolvido antes da admissão.
+
+Autenticidade da fonte não equivale a verdade.
+
+Ações externas passam por `ActionRequest + Policy + adapter`.
+
+---
+
+# 19. Enterprise Cognitive Threat Model
+
+Documento:
+
+`35_ENTERPRISE_COGNITIVE_THREAT_MODEL_V0_1.md`
+
+Ameaças cobertas incluem:
+
+```text
+cross-tenant leakage
+provenance spoofing
+data/knowledge poisoning
+Evidence Echo / laundering
+prompt injection
+agent hijacking
+orchestrator abuse
+denial of wallet
+resource exhaustion
+schema confusion
+replay
+promotion-gate compromise
+evaluation poisoning
+observability blindness
+supply-chain risk
+insider risk
+```
+
+Princípio:
+
+> **Segurança protege não só o que a Eva executa, mas também o que ela pode acreditar.**
+
+---
+
+# 20. Primeiro heartbeat executável
+
+Documento:
+
+`36_EXECUTABLE_ARCHITECTURE_SPEC_V0_1.md`
+
+Primeiro fluxo:
+
+```text
+EVENT
+  ↓
+INGRESS VALIDATION
+  ↓
+COGNITIVE ENVELOPE
+  ↓
+SCOPE / POLICY
+  ↓
+REGISTRIES
+  ↓
+ORCHESTRATION PLAN
+  ↓
+DETERMINISTIC CAPABILITY
+  ↓
+COGNITIVE ARTIFACT
+  ↓
+EVIDENCE / TRACE
+  ↓
+RESULT
+  ↓
+OBSERVABILITY
+```
+
+Sem LLM obrigatório, embeddings, UI ou domínio específico.
+
+Primeira capability de prova:
+
+```text
+CAP_STRUCTURED_OBSERVATION_EXTRACT
+```
+
+Objetivo inicial não é provar “inteligência”. É provar invariantes, circulação, idempotência, scope, policy, failure containment e trace.
+
+---
+
+# 21. Primeira tarefa do Cursor
+
+Depois de confirmar onde ficará o runtime executável, implementar somente:
+
+```text
+packages/contracts
+packages/schemas
+packages/envelope
+```
+
+Critérios:
+
+```text
+tests pass
+typecheck pass
+invalid envelopes fail validation
+valid fixtures round-trip without mutation
+no DB
+no HTTP
+no LLM
+no domain code
+```
+
+Ordem posterior:
+
+```text
+registries
+→ policy/budget
+→ deterministic capability
+→ orchestrator/trace
+→ integrity
+→ API
+→ persistence
+→ CI/benchmark
+```
+
+---
+
+# 22. Stack vigente
+
+- TypeScript;
 - monólito modular;
-- PostgreSQL/Supabase;
-- vetores no Postgres quando necessário;
-- API HTTP/REST primeiro;
-- background workers para processamento profundo;
-- providers intercambiáveis para embeddings/IA;
-- dataset JSON/JSONL versionado;
-- testes unitários, multilíngues, regressão, golden tests, red team, holdout e escala sintética.
+- PostgreSQL/Supabase quando persistência física entrar;
+- HTTP/REST inicialmente;
+- workers para tarefas assíncronas futuras;
+- providers intercambiáveis;
+- GitHub como fonte de verdade;
+- Cursor como executor da spec;
+- testes unit/integration/golden/regression/adversarial/fault injection;
+- logs estruturados;
+- sem secrets no repositório.
 
-Essas são direções iniciais, não dogmas eternos.
+Ferramentas específicas ainda abertas: package manager, runtime schema validator, HTTP framework, queue provider, observability provider.
 
 ---
 
-# 19. Como continuar em um novo chat
+# 23. Como continuar em novo chat/agente
 
-Um novo chat NÃO deve reconstruir o projeto do zero e NÃO deve voltar automaticamente para o produto de notas.
-
-Fluxo recomendado:
-
-1. Ler `00_BLUEPRINT_MESTRE.md`.
-2. Ler `01_REGISTRO_DECISOES.md`.
-3. Ler este arquivo.
-4. Ler `15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`.
-5. Ler `17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`.
+1. Ler `README.md` e sua ordem obrigatória.
+2. Ler `24_MAPA_MESTRE_ARQUITETURA_ENTERPRISE_V0_2.md`.
+3. Ler `25` a `36` na ordem.
+4. Ler `01_REGISTRO_DECISOES.md`.
+5. Ler este documento.
 6. Ler `AGENTS.md`.
-7. Identificar a frente arquitetural vigente.
-8. Continuar do estado atual.
-9. Atualizar documentação quando decisão estrutural mudar.
-
-Evitar pedir novamente explicação do projeto se ela estiver no repositório.
-
----
-
-# 20. Próxima frente de trabalho
-
-A próxima frente prioritária é definir **Cognitive Kernel + Evidence Model + Evaluation Plane** de forma coordenada.
-
-Questões centrais:
-
-- quais estruturas são realmente irredutíveis no Core;
-- como representar evidência;
-- como separar score de confidence;
-- como modelar incerteza;
-- como compor sinais sem amplificar erro;
-- como medir melhoria;
-- como aprender sem contaminar escopos maiores;
-- como promover e reverter comportamento aprendido.
+7. Não voltar automaticamente para notas/Eva Memory.
+8. Não inventar arquitetura no código.
+9. Antes de implementação, seguir `36_EXECUTABLE_ARCHITECTURE_SPEC_V0_1.md`.
+10. Atualizar Blueprint se uma decisão estrutural mudar.
 
 ---
 
-# 21. Princípio de trabalho
+# 24. Questões imediatas em aberto
 
-O Blueprint é vivo.
+- runtime em repo separado ou no `infra` — preferência atual: repo privado separado;
+- nome final do repo executável;
+- package manager / monorepo tooling;
+- runtime schema validation library;
+- primeira estratégia de IDs;
+- primeira persistence migration;
+- authN/authZ;
+- limites numéricos iniciais de budget;
+- primeiro domínio B2B E4 depois do heartbeat;
+- quando iniciar IA supervisora;
+- quais Cognitive Lenses entram na primeira capability cognitiva pós-heartbeat.
 
-Preferir:
+---
 
-- base vigente;
-- decisão aprovada;
-- versão atual;
-- hipótese em validação;
-- pronto para testar.
-
-A arquitetura pode evoluir, desde que a mudança seja explícita, documentada e testável.
-
-Frase-guia desta fase:
+# 25. Frases-guia
 
 > **Não estamos construindo um bloco de notas que ficou grande. Estamos construindo um motor que começou pequeno o suficiente para ser testado.**
+
+> **Nascer pequeno na implementação não significa nascer pequeno na arquitetura.**
+
+> **A ambição define o espaço arquitetural. O teste define o que podemos afirmar.**
+
+> **O primeiro coração não precisa pensar muito. Precisa bater certo.**
