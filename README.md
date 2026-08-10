@@ -9,7 +9,8 @@ Antes de propor arquitetura, código ou decisões estruturais, qualquer pessoa o
 1. `docs/blueprint/00_BLUEPRINT_MESTRE.md`
 2. `docs/blueprint/01_REGISTRO_DECISOES.md`
 3. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
-4. `AGENTS.md`
+4. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
+5. `AGENTS.md`
 
 Depois, consultar os documentos específicos da área em que irá trabalhar.
 
@@ -18,6 +19,14 @@ Depois, consultar os documentos específicos da área em que irá trabalhar.
 > Produtos dependem do Eva Engine®. O Eva Engine® não depende de nenhum produto consumidor.
 
 O Eva Memory® será o primeiro produto consumidor e laboratório real do motor, mas o Core deve nascer generalista.
+
+## Princípio de escala
+
+> **Nascer pequeno na implementação não significa nascer pequeno na arquitetura.**
+
+O Eva Engine® deve crescer por composição: novos idiomas, schemas, Domain Packs, capabilities, providers, relações e mecanismos de aprendizagem devem ampliar o sistema sem exigir reconstrução do núcleo.
+
+Aprendizado contínuo é desejado, porém sua promoção deve ser supervisionada, versionada, mensurável e reversível.
 
 ## Blueprint atual
 
@@ -41,11 +50,23 @@ infra/
         ├── 11_TESTES_E_DATASET.md
         ├── 12_POLICY_PRIVACIDADE_SEGURANCA.md
         ├── 13_MODELO_DE_DADOS_V0.md
-        └── 14_DOMAIN_PACK_MEMORY.md
+        ├── 14_DOMAIN_PACK_MEMORY.md
+        └── 15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md
 ```
 
 ## Situação atual
 
-A fundação conceitual já está registrada. O próximo passo é aprofundar a Ontologia v0, gerar o primeiro dataset de casos e então criar a estrutura executável do `eva-engine` no Cursor.
+A fundação conceitual e a direção de escala já estão registradas. O foco vigente é aprofundar o **Eva Engine® como infraestrutura cognitiva generalista**, antes de voltar a discutir experiência de usuário ou particularidades do produto de notas.
+
+As próximas frentes centrais são:
+
+- ontologia universal extensível;
+- hierarquia interna sem profundidade rígida;
+- aprendizado contínuo supervisionado em múltiplos níveis;
+- evaluators e promotion pipeline;
+- Capability Registry e Schema Registry;
+- event log, rastreabilidade e versionamento cognitivo;
+- dataset de referência e laboratório de testes;
+- primeira implementação executável no Cursor sem estreitar a arquitetura.
 
 O Blueprint é vivo: decisões podem evoluir, mas mudanças estruturais devem ser registradas e versionadas.
