@@ -11,7 +11,9 @@ Antes de propor arquitetura, código ou decisões estruturais, qualquer pessoa o
 3. `docs/blueprint/02_CONTEXTO_CONTINUIDADE.md`
 4. `docs/blueprint/15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md`
 5. `docs/blueprint/17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md`
-6. `AGENTS.md`
+6. `docs/blueprint/18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md`
+7. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
+8. `AGENTS.md`
 
 Depois, consultar os documentos específicos da área em que irá trabalhar.
 
@@ -61,7 +63,8 @@ infra/
         ├── 15_ESCALA_EXPONENCIAL_E_ARQUITETURA_DE_PLATAFORMA.md
         ├── 16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md
         ├── 17_FOCO_MOTOR_EMPRESARIAL_E_ENGENHARIA_DE_ESCALA.md
-        └── 18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md
+        ├── 18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md
+        └── 19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md
 ```
 
 ## Evidência experimental preservada
@@ -69,6 +72,8 @@ infra/
 `16_LICOES_DO_LABORATORIO_INTELIGENCIA_LOCAL.md` registra achados de uma bateria anterior com 508 cenários sobre mecanismos locais de um protótipo. O documento é tratado como **evidência histórica**, não como arquitetura-alvo: reaproveitamos método, métricas e falhas observadas sem transportar automaticamente limitações do protótipo para o novo Core.
 
 `18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md` registra a análise arquitetural de um acervo privado anterior com 32 fichas neuro/cognitivas. O conteúdo original não é reproduzido: a leitura propõe estudar essas fichas como **Lentes Cognitivas componíveis**, não como 32 primitivas rígidas do Core.
+
+`19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md` formaliza o significado arquitetural do **360**: Core no centro, órbita extensível de lentes, agentes, guards, challengers, evaluators e policies, com ativação seletiva, orçamento e critérios de parada. Também registra a pista histórica de uma hierarquia 32 → 12 → 8 sem inventar o mapeamento ausente no recorte disponível.
 
 ## Foco vigente
 
@@ -88,7 +93,11 @@ substrato determinístico
 → representação
 → contexto
 → recuperação
+→ lentes
+→ agentes especialistas
+→ cruzamento
 → relações/inferência
+→ challenger/contraprova
 → aprendizado
 → avaliação
 → orquestração
@@ -102,6 +111,7 @@ As próximas frentes centrais são:
 - Evaluation Plane e baselines;
 - Cognitive Lens Registry / Lens Stacks e orquestração seletiva;
 - arquitetura de agentes/guards determinísticos, heurísticos e opcionais por modelo;
+- Challenger/Critic e mecanismos de contraprova;
 - aprendizado contínuo supervisionado em múltiplos níveis;
 - Capability Registry e Schema Registry;
 - event log, lineage, rastreabilidade e versionamento cognitivo;
