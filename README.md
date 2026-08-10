@@ -15,7 +15,9 @@ Antes de propor arquitetura, código ou decisões estruturais, qualquer pessoa o
 7. `docs/blueprint/19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md`
 8. `docs/blueprint/20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md`
 9. `docs/blueprint/21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md`
-10. `AGENTS.md`
+10. `docs/blueprint/22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md`
+11. `docs/blueprint/23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md`
+12. `AGENTS.md`
 
 Depois, consultar os documentos específicos da área em que irá trabalhar.
 
@@ -34,6 +36,32 @@ Protótipos anteriores são laboratórios e evidência; **não definem o teto co
 O Eva Engine® deve crescer por composição: schemas, registries, Domain Packs, capabilities, providers, lentes, agentes, relações e mecanismos de aprendizagem devem ampliar o sistema sem exigir reconstrução do núcleo.
 
 O projeto distingue ideia, prova de mecanismo, bateria reproduzível, escala sintética, piloto de domínio, prova operacional e prova econômica.
+
+## Horizonte B2B enterprise
+
+O Blueprint usa **B2B enterprise** como barra de engenharia desde o início. O objetivo é investigar problemas corporativos em que empresas gastam muito para pensar, correlacionar, investigar e coordenar usando combinações de:
+
+```text
+LLMs
++
+agentes
++
+consultorias
++
+analistas
++
+processamento
++
+retrabalho
++
+investigação manual
++
+infraestrutura
+```
+
+A tese não é eliminar IA. É decompor o trabalho e resolver cada camada com o mecanismo de menor custo e maior previsibilidade que satisfaça o requisito, escalando para IA potente ou humano quando isso produzir ganho mensurável.
+
+Nenhuma alegação externa de economia, escala ou ROI será feita antes da evidência correspondente.
 
 ## Blueprint atual
 
@@ -64,7 +92,9 @@ infra/
         ├── 18_LENTES_COGNITIVAS_E_ORQUESTRACAO.md
         ├── 19_ARQUITETURA_360_ORBITAL_E_HIERARQUIA_DE_AGENTES.md
         ├── 20_EXPLOSAO_ATOMICA_RECURSIVA_E_ESCALONAMENTO_DE_IA.md
-        └── 21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md
+        ├── 21_QUARENTENA_COGNITIVA_PROMOCAO_E_RECUPERACAO.md
+        ├── 22_ORGANISMO_COGNITIVO_INTEGRIDADE_E_RESILIENCIA.md
+        └── 23_POSICIONAMENTO_B2B_DORES_E_TESE_DE_VALOR.md
 ```
 
 ## Evidência e conceitos preservados
@@ -74,6 +104,8 @@ infra/
 - `19_...` formaliza o **360** como Core central cercado por órbita extensível de lentes, agentes, guards, challengers, evaluators e policies.
 - `20_...` formaliza a **Explosão Atômica Recursiva em ondas** e o escalonamento progressivo de mecânica para IA supervisora.
 - `21_...` cria o **Learning Quarantine Plane**: candidatos de aprendizagem e derivados experimentais ficam fora do Trusted Core; só atravessam por Promotion Gate após avaliação, versionamento e possibilidade de recuperação/rollback.
+- `22_...` formaliza o motor como **organismo cognitivo de responsabilidades especializadas**, com Atomic Envelope, Integrity & Resilience Plane, health, watchdogs, quarantine, recuperação e detecção de peças ausentes/degradadas.
+- `23_...` registra o foco **B2B enterprise**, a pilha de dores corporativas e a tese econômica de IA seletiva, auditável e proporcional ao valor produzido.
 
 ## Foco vigente
 
@@ -83,37 +115,52 @@ A engenharia deve distinguir:
 
 - escala operacional;
 - escala cognitiva;
-- escala de domínio.
+- escala de domínio;
+- integridade e resiliência;
+- custo e prova econômica.
 
 Fluxo conceitual em evolução:
 
 ```text
-substrato determinístico
-→ sinais
-→ representação
-→ contexto
-→ recuperação
-→ lentes
-→ especialistas
-→ cruzamento
-→ inferência
-→ challenger
-→ avaliação
-→ policy
-→ resultado
-→ derivados cognitivos
-→ nova onda
-→ candidatos de aprendizagem
-→ Learning Quarantine
-→ Promotion Gate
-→ nova versão promovida do Trusted Core
+EVENT / INPUT
+   ↓
+Atomic Envelope
+   ↓
+Ingress Guards
+   ↓
+Trusted Cognitive Fabric
+   ↓
+Context · Lenses · Specialists
+   ↓
+Crossing · Inference
+   ↓
+Challenger · Evaluator · Policy
+   ↓
+Result
+   ├──────────────► consumer
+   └──────────────► cognitive derivatives
+                         ↓
+                     new wave
+                         ↓
+                 learning candidates
+                         ↓
+                 Learning Quarantine
+                         ↓
+                   Promotion Gate
+                         ↓
+               promoted/versioned state
+
+Integrity & Resilience Plane observes the whole path
+and can isolate, degrade, alert, recover or escalate.
 ```
 
 Próximas frentes centrais:
 
 - Cognitive Kernel e invariantes universais;
+- Atomic/Cognitive Envelope final;
 - Evidence Model;
 - Evaluation Plane e baselines;
+- Integrity & Resilience Plane;
 - Cognitive Lens Registry / Lens Stacks;
 - agentes/guards determinísticos, heurísticos e opcionais por modelo;
 - Challenger/Critic;
@@ -121,9 +168,11 @@ Próximas frentes centrais:
 - métricas de novidade, ganho de informação e valor marginal;
 - Supervisory AI Plane e critérios de escalonamento;
 - Learning Quarantine, Promotion Gate, Shadow Mode e Recovery Protocol;
-- Capability Registry e Schema Registry;
-- lineage, blast radius, rastreabilidade e versionamento cognitivo;
-- datasets, red team, testes de escala e pilotos de domínio.
+- Capability Registry, Health Registry e Schema Registry;
+- lineage, taint propagation, blast radius e versionamento cognitivo;
+- observabilidade, cost-per-event e AI escalation rate;
+- datasets, red team, fault injection, testes de escala e pilotos enterprise;
+- seleção do primeiro problema B2B E4 com baseline operacional e econômico.
 
 ## Fase privada de P&D
 
